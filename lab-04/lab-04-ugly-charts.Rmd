@@ -35,20 +35,22 @@ improved visualizations and the reasoning for the choices you made.
 - Reshaping data.
 - Merge conflicts
 
-# Hello (again) teams!
+# Before the workshop
+
+## Hello (again) teams!
 
 First things first: get to know your team members. You can find your team assignment 
 for the rest of the semester [here](https://github.com/ids-s1-19/team-assignments/blob/master/roster-team.csv).
 
 If there are any issues with the team roster, please let one of the tutors or the professor know asap!
 
-# Getting started
+## Getting started
 
 Go to the course [GitHub organization](https://github.com/ids-s1-19) and locate your Lab 04 repo, which should be named `lab-04-ugly-charts-YOUR_TEAMNAME`. Grab the URL of the repo, and clone it in RStudio. Refer to [Lab 01](/labs/lab-01/lab-01-hello-r) if you would like to see step-by-step instructions for cloning a repo into an RStudio project.
 
 First, open the R Markdown document `lab-04-ugly-charts.Rmd` and Knit it. Make sure it compiles without errors. The output will be in the file markdown `.md` file with the same name.
 
-# Hello Git!
+## Hello Git!
 
 ```{marginfigure}
 Your email address is the address tied to your GitHub account and your name should be first and last name.
@@ -64,21 +66,23 @@ use_git_config(user.name = "Your Name",
                user.email = "your.email@address.com")
 ``` 
 
-# Workflow
+# Warm-up
+
+## Workflow
 
 This is the second week you're working in teams, so we're going to make things a little more interesting and let all of you make changes and push those changes to your team repository. Sometimes things will go swimmingly, and sometimes you'll run into merge conflicts. So our first task today is to walk you through a merge conflict!
 
-## Merge conflicts
+### Merge conflicts
 
 - When two collaborators make changes to a file and push the file to their repo, git merges these two files.
 - If these two files have conflicting content on the same line, git will produce a **merge conflict**.
 
-## Set up
+### Set up
 
 - Clone the repo for your next assignment in RStudio, and open the .Rmd file.
 - Assign the numbers 1, 2, 3, and 4 to each of the team members.
 
-## Let's cause a merge conflict!
+### Let's cause a merge conflict!
 
 Take turns in completing the exercise, only one member at a time.
 
@@ -92,13 +96,15 @@ Take turns in completing the exercise, only one member at a time.
 `r emo::ji("stop_sign")` Wait for instructions before moving on to the next step.  
 - **All members:** Pull, and observe the changes in your document.
 
-## Tips for collaborating via GitHub
+### Tips for collaborating via GitHub
 
 - Always pull first before you start working.
 - Commit, and push, often to minimize merge conflicts and/or to make merge conflicts easier to resolve.
 - If you find yourself in a situation that is difficult to resolve, ask questions asap, don't let it linger and get bigger.
 
-# Packages
+# During the workshop
+
+## Packages
 
 Run the following code in the Console to load this package.
 
@@ -106,9 +112,9 @@ Run the following code in the Console to load this package.
 library(tidyverse)
 ```
 
-# Take a sad plot and make it better
+## Take a sad plot and make it better
 
-## Instructional staff employment trends
+### Instructional staff employment trends
 
 The American Association of 
 University Professors (AAUP) is a nonprofit membership association of faculty 
@@ -207,7 +213,7 @@ homework will be.)
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-## Fisheries
+### Fisheries
 
 Fisheries and Aquaculture Department of the Food and 
 Agriculture Organization of the United Nations collects data on fisheries 
@@ -236,7 +242,9 @@ fisheries <- read_csv("data/fisheries.csv")
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-# Wrapping up
+# After the workshop
+
+## Wrapping up
 
 Go back through your write up to make sure you're following coding style 
 guidelines we discussed in class. Make any edits as needed.
@@ -248,7 +256,7 @@ Once the team leader for the week pushes their final changes, others should
 *pull* the changes and knit the R Markdown document to confirm that they can 
 reproduce the report.
 
-## More ugly charts
+### More ugly charts
 
 Want to see more ugly charts?
 
