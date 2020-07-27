@@ -35,7 +35,9 @@ improved visualizations and the reasoning for the choices you made.
 - Reshaping data.
 - Merge conflicts
 
-# Before the workshop
+# Prepare at home
+
+Please do this before you come and join the workshop!
 
 ## Hello (again) teams!
 
@@ -76,7 +78,6 @@ Before we get to work let's play a little game! Will the following graphs fool y
 - In what way do you think these errors would deceive the less observant?
 - How would you fix these graphs?
 
-
 ### Who's happiest?
 
 ```{r echo=FALSE, fig.fullwidth=TRUE}
@@ -94,6 +95,10 @@ knitr::include_graphics("img/global-warming.jpg")
 ```{r echo=FALSE, fig.fullwidth=TRUE}
 knitr::include_graphics("img/Speaking-the-world.jpg")
 ```
+
+# Workshop exercises
+
+These are the main exercises to work on during the workshop!
 
 ## Workflow
 
@@ -128,9 +133,6 @@ Take turns in completing the exercise, only one member at a time.
 - Always pull first before you start working.
 - Commit, and push, often to minimize merge conflicts and/or to make merge conflicts easier to resolve.
 - If you find yourself in a situation that is difficult to resolve, ask questions asap, don't let it linger and get bigger.
-
-
-# During the workshop
 
 ## Packages
 
@@ -270,9 +272,10 @@ fisheries <- read_csv("data/fisheries.csv")
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-# After the workshop
+# Wrapping up
 
-## Wrapping up
+This is to finish up the workshop. Depending on the time you may need to do this
+after the workshop ended.
 
 Go back through your write up to make sure you're following coding style 
 guidelines we discussed in class. Make any edits as needed.
@@ -284,7 +287,7 @@ Once the team leader for the week pushes their final changes, others should
 *pull* the changes and knit the R Markdown document to confirm that they can 
 reproduce the report.
 
-### More ugly charts
+## More ugly charts
 
 Want to see more ugly charts?
 
