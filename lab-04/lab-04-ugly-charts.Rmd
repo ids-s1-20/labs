@@ -20,7 +20,7 @@ And then click on new project from Git.
 Given below are three data visualizations that violate many data visualization 
 best practices. Improve these visualizations using R and the tips for effective 
 visualizations that we introduced in class. You should produce one visualization 
-per dataset. Your visualizaiton should be accompanies by a brief paragraph 
+per dataset. Your visualization should be accompanied by a brief paragraph 
 describing the choices you made in your improvement, specifically discussing 
 what you didn't like in the original plots and why, and how you addressed them 
 in the visualization you created.
