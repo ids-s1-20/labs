@@ -68,6 +68,34 @@ use_git_config(user.name = "Your Name",
 
 # Warm-up
 
+## Icebreaker
+
+Before we get to work let's play a little game! Will the following graphs fool you or can you pinpoint what they've done to mislead you? 
+
+- Who's happiest?
+
+```{r echo=FALSE, fig.fullwidth=TRUE}
+knitr::include_graphics("img/nyt-04happy-top.jpg")
+```
+
+- Global warming is over!
+
+```{r echo=FALSE, fig.fullwidth=TRUE}
+knitr::include_graphics("img/global-warming.jpg")
+```
+
+- Languages around the world
+
+```{r echo=FALSE, fig.fullwidth=TRUE}
+knitr::include_graphics("img/Speaking-the-world.jpg")
+```
+
+### Discuss!
+
+- How many errors could you find? 
+- In what way do you think these errors would deceive the less observant?
+- How would you fix these graphs?
+
 ## Workflow
 
 This is the second week you're working in teams, so we're going to make things a little more interesting and let all of you make changes and push those changes to your team repository. Sometimes things will go swimmingly, and sometimes you'll run into merge conflicts. So our first task today is to walk you through a merge conflict!
@@ -101,6 +129,7 @@ Take turns in completing the exercise, only one member at a time.
 - Always pull first before you start working.
 - Commit, and push, often to minimize merge conflicts and/or to make merge conflicts easier to resolve.
 - If you find yourself in a situation that is difficult to resolve, ask questions asap, don't let it linger and get bigger.
+
 
 # During the workshop
 
