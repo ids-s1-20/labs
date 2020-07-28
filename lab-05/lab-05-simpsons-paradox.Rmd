@@ -60,6 +60,17 @@ Out of 200 men who were given the treatment, only 50 of them survived and out of
 
 Now combine the data, can we say that the treatment is effective for the whole population? What went wrong?
 
+Here's a nice way of viewing this problem. Fill in the table below with the percentage of survivors. 
+
+
+|              | Men | Women | Men + Women |
+|--------------|-----|-------|-------------|
+| Treatment    |     |       |             |
+| No Treatment |     |       |             |
+|              |     |       |             |
+
+Weird, right?
+
 # Workshop exercises
 ## Workflow
 
