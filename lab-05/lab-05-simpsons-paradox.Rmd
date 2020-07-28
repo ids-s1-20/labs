@@ -50,6 +50,15 @@ Make sure it compiles without errors. The output will be in the file markdown
 
 # Warm-up
 
+Today's warm-up is on the importance of context. Discuss the following situation with your group.
+
+We are testing a drug and we decide to keep the data from men and women separate. We observe the following.
+
+Out of 100 women who were given the treatment all of them survive and out of 200 women who weren't given the treatment only 150 of them survive. Does it seem like the treatment is effective?
+
+Out of 200 men who were given the treatment, only 50 of them survived and out of 100 who weren't given the treatment, none of them survived. Is the treatment effective?
+
+Now combine the data, can we say that the treatment is effective for the whole population? What went wrong?
 
 # Workshop exercises
 ## Workflow
