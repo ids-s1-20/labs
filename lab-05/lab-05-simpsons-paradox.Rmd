@@ -45,10 +45,10 @@ Grab the URL of the repo, and clone it in RStudio Cloud. Refer to [Lab 01](/labs
 instructions for cloning a repo into an RStudio project.
 
 First, open the R Markdown document `lab-05-simpsons-paradox.Rmd` and Knit it. 
-Make sure it compiles without errors. The output will be in the file markdown 
+Make sure it compiles without errors. The output will be in the markdown 
 `.md` file with the same name.
 
-# Warm-up
+# Warm-up with your team
 
 Today's warm-up is on the importance of context. Discuss the following situation with your group.
 
@@ -56,11 +56,11 @@ We are testing a drug and we decide to keep the data from men and women separate
 
 Out of 100 women who were given the treatment all of them survive and out of 200 women who weren't given the treatment only 150 of them survive. Does it seem like the treatment is effective?
 
-Out of 200 men who were given the treatment, only 50 of them survived and out of 100 who weren't given the treatment, none of them survived. Is the treatment effective?
+Out of 200 men who were given the treatment, only 20 of them survived and out of 100 who weren't given the treatment, none of them survived. Is the treatment effective?
 
 Now combine the data, can we say that the treatment is effective for the whole population? What went wrong?
 
-Here's a nice way of viewing this problem. Fill in the table below with the percentage of survivors. 
+Here's a nice way of viewing this problem. Try drawing a table like the one below and fill in the cells with the percentage of people who survived. 
 
 
 |              | Men | Women | Men + Women |
@@ -69,7 +69,7 @@ Here's a nice way of viewing this problem. Fill in the table below with the perc
 | No Treatment |     |       |             |
 |              |     |       |             |
 
-Weird, right?
+Compare the percentages in each column and see what it tells you about the effectiveness of the drug. Weird, right?
 
 # Workshop exercises
 ## Workflow
