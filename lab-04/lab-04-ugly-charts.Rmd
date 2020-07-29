@@ -68,7 +68,7 @@ use_git_config(user.name = "Your Name",
                user.email = "your.email@address.com")
 ``` 
 
-# Warm-up
+# Warm-up with your team
 
 Before we get to work let's play a little game! Will the following graphs fool you or can you pinpoint what they've done to mislead you?
 
