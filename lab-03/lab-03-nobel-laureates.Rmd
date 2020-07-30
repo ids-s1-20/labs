@@ -44,6 +44,32 @@ Go to the course [GitHub organization](https://github.com/ids-s1-19) and locate 
 
 First, open the R Markdown document `lab-03-nobel-winners.Rmd` and Knit it. Make sure it compiles without errors. The output will be in the file markdown `.md` file with the same name.
 
+# Warm-up
+
+For this warm-up we will take some bad code and make it better. Before we do that,
+however, let's remind ourselves what bad code is!
+
+Go back to 
+[lecture 5](https://introds.org/slides/w3_d1-data-wrangle/w3_d1-data-wrangle.html#1)
+and discuss what belongs on a **short and concise** checklist of what makes _good_ code. Here's something to get you started:
+
+- No spaces in file name/code chunk labels
+- ...
+
+Armed with your new checklist, have a go at the code below and discuss where it
+needs improving:
+
+```{marginfigure}
+Hint: Is there a common acronym for "miles per hour" that's informative but short?
+```
+
+```{r}
+averagemilesperhour <-mean(miles /hoursTravelled, na.rm=TRUE)
+```
+
+It's a good idea to hold on to your checklist, you'll probably want to refer to
+it frequently before submitting your work!
+
 # Packages
 
 We'll use the **tidyverse** package for this analysis. Run the following code in the Console to load this package.
