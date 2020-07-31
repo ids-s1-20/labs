@@ -23,7 +23,11 @@ Additionally, National Geographic recently ran a data visualization communicatio
 - Recreate visualizations.
 - Get more practice using with Git and GitHub.
 
-# Getting started
+# Prepare at home
+
+Please do this before you come and join the workshop!
+
+## Getting started
 
 ```{marginfigure}
 **IMPORTANT:** If there is no GitHub repo created for you for this assignment, it means I didn't have your GitHub username as of when I assigned the homework. Please let me know your GitHub username asap, and I can create your repo.
@@ -33,7 +37,7 @@ Go to the course [GitHub organization](https://github.com/ids-s1-19) and locate 
 
 First, open the R Markdown document `lab-02-plastic-waste.Rmd` and Knit it. Make sure it compiles without errors. The output will be in the file markdown `.md` file with the same name.
 
-# Packages
+## Packages
 
 We'll use the **tidyverse** package for this analysis. Run the following code in the Console to load this package.
 
@@ -41,7 +45,7 @@ We'll use the **tidyverse** package for this analysis. Run the following code in
 library(tidyverse)
 ```
 
-# Data
+## Data
 
 The dataset for this assignment can be found as a csv file in the `data` folder of your repository. You can read it in using the following.
 
@@ -61,6 +65,14 @@ The variable descriptions are as follows:
 - `mismanaged_plastic_waste`: Tonnes of mismanaged plastic waste
 - `coastal_pop`: Number of individuals living on/near coast
 - `total_pop`: Total population according to Gapminder
+
+# Warm-up with your team
+
+Recall that RStudio is divided into four panes. Can you name them all and briefly describe their purpose?
+
+Verify that the dataset has loaded into the Environment. How many observations are in the dataset? Clicking on the dataset in the Environment will allow you to inspect it more carefully. Alternatively, you can type `View(plastic_waste)` into the Console to do this. Have a quick look at the data and notice that there are cells taking the value `NA` -- what does this mean?
+
+*Hint: If you're not sure or want to verify, run the command `?NA` which will lead you to the documentation.*
 
 # Exercises
 
