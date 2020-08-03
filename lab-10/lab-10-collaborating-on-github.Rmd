@@ -24,7 +24,9 @@ projects. They’re kind of like email—except they can be shared and discussed
 with the rest of your team. You can use issues as to-do lists as well as a place 
 for brainstorming / discussing ideas.
 
-### Opening an issue
+# Warm Up 
+
+## Opening an issue
 
 1. Go to your project repo and open a new issue titled "Practice issue". 
 2. Add the following text to the issue:
@@ -51,7 +53,7 @@ knitr::include_graphics("img/practice-issue-create.png")
 knitr::include_graphics("img/practice-issue-assign.png")
 ```
 
-### Working on the issue
+# Working on the issue
 
 As you work on the issue you can check the boxes.
 
@@ -68,7 +70,7 @@ knitr::include_graphics("img/practice-issue-progress.png")
 6. Check some of the boxes on your practice issue and confirm that you can 
 see the progress result on the issue dashboard.
 
-### Closing the issue
+## Closing the issue
 
 Once you're done with an issue, you should close it. You can do this in one of 
 two ways: on GitHub by clicking on Close issue or via a commit that directly 
