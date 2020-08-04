@@ -24,7 +24,7 @@ projects. They’re kind of like email—except they can be shared and discussed
 with the rest of your team. You can use issues as to-do lists as well as a place 
 for brainstorming / discussing ideas.
 
-# Warm Up 
+# Warm-up 
 
 ## Opening an issue
 
