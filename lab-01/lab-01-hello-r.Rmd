@@ -25,7 +25,7 @@ You will be asked to do some tasks before each lab. Since this is our first lab,
 
 # Introduce yourself
 
-At the start of each session, you will be given a 5-minute warm-up excercise to discuss with your group. This time, use this as an opportunity to meet your course mates. What's everyone's favourite emoji and why? Or the least favourite?
+At the start of each session, you will be given a 5-minute warm-up excercise to discuss with your group. This time, use this as an opportunity to meet your course mates. What's everyone's favourite emoji and why? And the least favourite?
 
 ---
 
