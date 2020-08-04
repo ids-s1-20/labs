@@ -70,25 +70,7 @@ use_git_config(user.name = "Your Name",
 
 # Warm-up
 
-Before we get to work let's play a little game! Will the following graphs fool you or can you pinpoint what they've done to mislead you?
-
-## Discuss!
-
-- How many errors could you find? 
-- In what way do you think these errors would deceive the less observant?
-- How would you fix these graphs?
-
-### Who's happiest?
-
-```{r echo=FALSE, fig.fullwidth=TRUE}
-knitr::include_graphics("img/nyt-04happy-top.jpg")
-```
-
-### Global warming is over!
-
-```{r echo=FALSE, fig.fullwidth=TRUE}
-knitr::include_graphics("img/global-warming.jpg")
-```
+Before we get to work let's play a little game! Can you find all the errors in this graph? How could you fix them?
 
 ### Languages around the world
 
