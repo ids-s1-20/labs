@@ -53,7 +53,7 @@ knitr::include_graphics("img/practice-issue-create.png")
 knitr::include_graphics("img/practice-issue-assign.png")
 ```
 
-# Working on the issue
+## Working on the issue
 
 As you work on the issue you can check the boxes.
 
@@ -81,6 +81,7 @@ closed when you push the changes to your repo.
 7. Take a note of the issue number, which will show up next to the 
 issue title.
 
+# Workshop Exercises
 ```{r echo=FALSE}
 knitr::include_graphics("img/practice-issue-number.png")
 ```
