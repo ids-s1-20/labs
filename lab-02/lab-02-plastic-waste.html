@@ -107,6 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Recreate visualizations.</li>
 <li>Get more practice using with Git and GitHub.</li>
 </ul>
+<hr />
 </div>
 <div id="prepare-at-home" class="section level1">
 <h1>Prepare at home</h1>
@@ -140,13 +141,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>coastal_pop</code>: Number of individuals living on/near coast</li>
 <li><code>total_pop</code>: Total population according to Gapminder</li>
 </ul>
+<hr />
 </div>
 </div>
-<div id="warm-up-with-your-team" class="section level1">
-<h1>Warm-up with your team</h1>
-<p>Recall that RStudio is divided into four panes. Can you name them all and briefly describe their purpose?</p>
-<p>Verify that the dataset has loaded into the Environment. How many observations are in the dataset? Clicking on the dataset in the Environment will allow you to inspect it more carefully. Alternatively, you can type <code>View(plastic_waste)</code> into the Console to do this. Have a quick look at the data and notice that there are cells taking the value <code>NA</code> – what does this mean?</p>
+<div id="warm-up" class="section level1">
+<h1>Warm-up</h1>
+<p>You have 5 minutes to complete this section.</p>
+<ul>
+<li>Recall that RStudio is divided into four panes. Can you name them all and briefly describe their purpose?</li>
+<li>Verify that the dataset has loaded into the Environment. How many observations are in the dataset? Clicking on the dataset in the Environment will allow you to inspect it more carefully. Alternatively, you can type <code>View(plastic_waste)</code> into the Console to do this.</li>
+<li>Have a quick look at the data and notice that there are cells taking the value <code>NA</code> – what does this mean?</li>
+</ul>
 <p><em>Hint: If you’re not sure or want to verify, run the command <code>?NA</code> which will lead you to the documentation.</em></p>
+<hr />
 </div>
 <div id="exercises" class="section level1">
 <h1>Exercises</h1>
@@ -159,11 +166,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plastic_waste <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">filter</span>(plastic_waste_per_cap <span class="op">&gt;</span><span class="st"> </span><span class="fl">3.5</span>)</code></pre></div>
 <pre><code>## # A tibble: 1 x 10
-##   code  entity continent  year gdp_per_cap plastic_waste_p…
-##   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
-## 1 TTO   Trini… North Am…  2010      31261.              3.6
-## # … with 4 more variables: mismanaged_plastic_waste_per_cap &lt;dbl&gt;,
-## #   mismanaged_plastic_waste &lt;dbl&gt;, coastal_pop &lt;dbl&gt;, total_pop &lt;dbl&gt;</code></pre>
+##   code  entity continent  year gdp_per_cap plastic_waste_p… mismanaged_plas…
+##   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1 TTO   Trini… North Am…  2010      31261.              3.6             0.19
+## # … with 3 more variables: mismanaged_plastic_waste &lt;dbl&gt;, coastal_pop &lt;dbl&gt;,
+## #   total_pop &lt;dbl&gt;</code></pre>
 <p>Did you expect this result? You might consider doing some research on Trinidad and Tobago to see why plastic waste per capita is so high there, or whether this is a data error.</p>
 <ol style="list-style-type: decimal">
 <li>Plot, using histograms, the distribution of plastic waste per capita faceted by continent. What can you say about how the continents compare to each other in terms of their plastic waste per capita?</li>
@@ -210,6 +217,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>Visualize the relationship between plastic waste per capita and total population as well as plastic waste per capita and coastal population. Do either of these pairs of variables appear to be more strongly linearly associated?</p></li>
 </ol>
 <p>✅ ⬆️ <em>Now is another good time to commit and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
+<hr />
+<p>We don’t expect you to complete all the exercises within the hour reserved for the lab. Ideally, you should’ve got to this point. If you still have some time left, move on to the remaining exercises below. Otherwise you should take time to complete them after the lab. If you haven’t even had time to finish the exercises above, please ask for help!</p>
 <p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote"><span style="display: block;">Hint: The x-axis is a calculated variable. One country with plastic waste per capita over 3 kg/day has been filtered out. And the colors are from the viridis color palette. Take a look at the functions starting with <code>scale_color_viridis_*</code>.</span></span></p>
 <ol style="list-style-type: decimal">
 <li>Recreate the following plot, and interpret what you see in context of the data.</li>
