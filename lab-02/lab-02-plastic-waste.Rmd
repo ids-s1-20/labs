@@ -74,11 +74,23 @@ The variable descriptions are as follows:
 
 You have 5 minutes to complete this section.
 
-- Recall that RStudio is divided into four panes. Can you name them all and briefly describe their purpose?
+- Recall that RStudio is divided into four panes. Without looking, can you name them all and briefly describe their purpose?
 - Verify that the dataset has loaded into the Environment. How many observations are in the dataset? Clicking on the dataset in the Environment will allow you to inspect it more carefully. Alternatively, you can type `View(plastic_waste)` into the Console to do this. 
+
+```{marginfigure}
+Hint: If you're not sure, run the command `?NA` which will lead you to the documentation.
+```
+
 - Have a quick look at the data and notice that there are cells taking the value `NA` -- what does this mean?
 
-*Hint: If you're not sure or want to verify, run the command `?NA` which will lead you to the documentation.*
+<details><summary>Show answers</summary>
+  <ul><small>
+   <li> Editor; Console; Environment, history, git; Files, plots, packages, help, viewer
+   <li>240</li>
+   <li> Not Available, indicates missing values</li>
+   </small>
+  </ul>
+</details>
 
 ---
 
