@@ -72,11 +72,12 @@ use_git_config(user.name = "Your Name",
 
 Before we get to work let's play a little game! Can you find all the errors in this graph? How could you fix them?
 
-### Languages around the world
 
 ```{r echo=FALSE, fig.fullwidth=TRUE}
 knitr::include_graphics("img/Speaking-the-world.jpg")
 ```
+
+---
 
 # Workshop exercises
 
@@ -225,6 +226,12 @@ homework will be.)
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
+---
+
+# Wrapping up
+
+This is the end of the "in person" workshop! Feel free to continue if you're confident with the previous exercises, otherwise this is your chance to ask questions. You can finish this section in your own time.
+
 ### Fisheries
 
 Fisheries and Aquaculture Department of the Food and 
@@ -254,7 +261,7 @@ fisheries <- read_csv("data/fisheries.csv")
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-# Wrapping up
+
 
 This is to finish up the workshop. Depending on the time you may need to do this
 after the workshop ended.
