@@ -99,7 +99,7 @@ lab that each file will be used for:
 |  |- 03-scrape-page-many.R       # iteration
 ```
   
-Now let's ourselves to  Webscraping.
+Now let's dive into Webscraping.
 
 ## SelectorGadget
 
