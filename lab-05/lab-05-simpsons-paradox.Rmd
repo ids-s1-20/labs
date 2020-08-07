@@ -48,6 +48,7 @@ First, open the R Markdown document `lab-05-simpsons-paradox.Rmd` and Knit it.
 Make sure it compiles without errors. The output will be in the markdown 
 `.md` file with the same name.
 
+
 # Warm-up with your team
 
 Today's warm-up is on the importance of context. Discuss the following situation with your group.
@@ -70,6 +71,8 @@ Here's a nice way of viewing this problem. Try drawing a table like the one belo
 |              |     |       |             |
 
 Compare the percentages in each column and see what it tells you about the effectiveness of the drug. Weird, right?
+
+---
 
 # Workshop exercises
 ## Workflow
@@ -290,6 +293,12 @@ Whickham %>%
   ___
 ```
 
+---
+
+# Wrapping up
+
+This is the end of the "in person" workshop. Feel free to continue with the following exercises if you're confident with what you've done so far, otherwise please ask questions!
+
 6. Create a new variable called `age_cat` using the following scheme:
 
 - `age <= 44 ~ "18-44"`
@@ -308,7 +317,6 @@ Whickham %>%
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-# Wrapping up
 
 Go back through your write up to make sure you're following coding style 
 guidelines we discussed in class. Make any edits as needed.
