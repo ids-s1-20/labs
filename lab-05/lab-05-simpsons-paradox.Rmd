@@ -15,8 +15,6 @@ library(kableExtra)
 library(tidyverse)
 ```
 
----
-
 # Learning Goals
 
 ```{marginfigure}
@@ -28,6 +26,8 @@ library(tidyverse)
 This week in workshop the theme is paradoxes and conflicts. That is, we will 
 first (finally!) get to the bottom of merge conflicts and then return our 
 attention back to data analysis with Simpson's paradox.
+
+---
 
 # Prepare at home
 
@@ -48,12 +48,14 @@ First, open the R Markdown document `lab-05-simpsons-paradox.Rmd` and Knit it.
 Make sure it compiles without errors. The output will be in the markdown 
 `.md` file with the same name.
 
+---
 
 # Warm-up with your team
 
 Today's warm-up is on the importance of context. Discuss the following situation with your group.
 
-We are testing a drug and we decide to keep the data from cats and dogs separate. We observe the following.
+We are testing a drug for cats and dogs and record the data for
+each of them separately. We observe the following.
 
 Out of 100 dogs who were given the treatment all of them survive and out of 200 dogs who weren't given the treatment only 150 of them survive. Does it seem like the treatment is effective?
 
@@ -61,7 +63,7 @@ Out of 200 cats who were given the treatment, only 50 of them survived and out o
 
 Now combine the data, can we say that the treatment is effective for the whole group of cats and dogs? What went wrong?
 
-Here's a nice way of viewing this problem. Try drawing a table like the one below and fill in the cells with the percentage of people who survived. 
+Here's a nice way of viewing this problem. Try drawing a table like the one below and fill in the cells with the _percentage_ of cats, dogs and both, who survived. 
 
 
 |              | Cats| Dogs  | Cats + Dogs |
@@ -223,7 +225,7 @@ measure of association between another explanatory variable and a response varia
 
 ### Age, smoking, and mortality in Whickham
 
-In this lab we will work with data on age, smoking, and mormatiligy from a 
+In this lab we will work with data on age, smoking, and mortality from a 
 survey of the electoral roll in Whickham, a mixed urban and rural district near 
 Newcastle upon Tyne, in the UK. The survey was conducted in 1972-1974 to study 
 heart disease and thyroid disease. A follow-up on those in the survey was 

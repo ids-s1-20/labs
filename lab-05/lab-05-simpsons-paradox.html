@@ -516,11 +516,11 @@ text-align: center;
 </ul>
 </div>
 
-<hr />
 <div id="learning-goals" class="section level1">
 <h1>Learning Goals</h1>
 <p><label for="tufte-mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Learning goals:</strong><br /> + Merge conflicts<br /> + Deciphering Simpson’s paradox with visualizations and summary statistics</span></span></p>
 <p>This week in workshop the theme is paradoxes and conflicts. That is, we will first (finally!) get to the bottom of merge conflicts and then return our attention back to data analysis with Simpson’s paradox.</p>
+<hr />
 </div>
 <div id="prepare-at-home" class="section level1">
 <h1>Prepare at home</h1>
@@ -529,16 +529,17 @@ text-align: center;
 <p><label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote"><span style="display: block;">You can find your team assignment for the rest of the semester <a href="https://github.com/ids-s1-19/team-assignments/blob/master/roster-team.csv">here</a>. If there are any issues with the team roster, please let one of the tutors or the professor know asap!</span></span></p>
 <p>Go to the course <a href="https://github.com/ids-s1-19">GitHub organization</a> and locate your Lab 05 repo, which should be named <code>lab-05-simpsons-paradox-YOUR_TEAMNAME</code>. Grab the URL of the repo, and clone it in RStudio Cloud. Refer to <a href="/labs/lab-01/lab-01-hello-r">Lab 01</a> if you would like to see step-by-step instructions for cloning a repo into an RStudio project.</p>
 <p>First, open the R Markdown document <code>lab-05-simpsons-paradox.Rmd</code> and Knit it. Make sure it compiles without errors. The output will be in the markdown <code>.md</code> file with the same name.</p>
+<hr />
 </div>
 </div>
 <div id="warm-up-with-your-team" class="section level1">
 <h1>Warm-up with your team</h1>
 <p>Today’s warm-up is on the importance of context. Discuss the following situation with your group.</p>
-<p>We are testing a drug and we decide to keep the data from cats and dogs separate. We observe the following.</p>
+<p>We are testing a drug for cats and dogs and record the data for each of them separately. We observe the following.</p>
 <p>Out of 100 dogs who were given the treatment all of them survive and out of 200 dogs who weren’t given the treatment only 150 of them survive. Does it seem like the treatment is effective?</p>
 <p>Out of 200 cats who were given the treatment, only 50 of them survived and out of 100 who weren’t given the treatment, none of them survived. Is the treatment effective?</p>
 <p>Now combine the data, can we say that the treatment is effective for the whole group of cats and dogs? What went wrong?</p>
-<p>Here’s a nice way of viewing this problem. Try drawing a table like the one below and fill in the cells with the percentage of people who survived.</p>
+<p>Here’s a nice way of viewing this problem. Try drawing a table like the one below and fill in the cells with the <em>percentage</em> of cats, dogs and both, who survived.</p>
 <table>
 <thead>
 <tr class="header">
@@ -799,7 +800,7 @@ B
 </div>
 <div id="age-smoking-and-mortality-in-whickham" class="section level3">
 <h3>Age, smoking, and mortality in Whickham</h3>
-<p>In this lab we will work with data on age, smoking, and mormatiligy from a survey of the electoral roll in Whickham, a mixed urban and rural district near Newcastle upon Tyne, in the UK. The survey was conducted in 1972-1974 to study heart disease and thyroid disease. A follow-up on those in the survey was conducted twenty years later.</p>
+<p>In this lab we will work with data on age, smoking, and mortality from a survey of the electoral roll in Whickham, a mixed urban and rural district near Newcastle upon Tyne, in the UK. The survey was conducted in 1972-1974 to study heart disease and thyroid disease. A follow-up on those in the survey was conducted twenty years later.</p>
 <div id="packages" class="section level4">
 <h4>Packages</h4>
 <p>In this lab we will work with the <code>tidyverse</code> and <code>mosaicData</code> packages.</p>
