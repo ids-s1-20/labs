@@ -35,6 +35,8 @@ improved visualizations and the reasoning for the choices you made.
 - Reshaping data.
 - Merge conflicts
 
+---
+
 # Prepare at home
 
 Please do this before you come and join the workshop!
@@ -67,6 +69,8 @@ library(usethis)
 use_git_config(user.name = "Your Name", 
                user.email = "your.email@address.com")
 ``` 
+
+---
 
 # Warm-up with your team
 
