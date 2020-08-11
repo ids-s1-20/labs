@@ -26,8 +26,6 @@ recreate some of their visualizations as well as explore new questions.
 - Summarise data.
 - Get more practice working as a team.
 
----
-
 # Prepare at home
 
 Please do this before you come and join the workshop!
@@ -49,8 +47,6 @@ Starting next week we'll show you how you can all collectively work in a repo, t
 Go to the course [GitHub organization](https://github.com/ids-s1-19) and locate your Lab 03 repo, which should be named `lab-03-nobel-winners-YOUR_TEAMNAME`. Grab the URL of the repo, and clone it in RStudio. Refer to [Lab 01](/labs/lab-01/lab-01-hello-r) if you would like to see step-by-step instructions for cloning a repo into an RStudio project.
 
 First, open the R Markdown document `lab-03-nobel-winners.Rmd` and Knit it. Make sure it compiles without errors. The output will be in the markdown `.md` file with the same name.
-
----
 
 # Warm-up with your team
 
@@ -78,7 +74,17 @@ averagemilesperhour <-mean(miles /hoursTravelled, na.rm=TRUE)
 It's a good idea to hold on to your checklist, you'll probably want to refer to
 it frequently before submitting your work now and in future!
 
----
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  In-person workshop starts here!
+</span></p>
 
 # Workshop Exercises
 
@@ -191,7 +197,17 @@ For the next exercise work with the `nobel_living_science` data frame you create
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
----
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  End of in-person workshop.
+</span></p>
 
 # Wrapping Up
 
