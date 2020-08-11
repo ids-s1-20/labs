@@ -27,9 +27,9 @@ This week in workshop the theme is paradoxes and conflicts. That is, we will
 first (finally!) get to the bottom of merge conflicts and then return our 
 attention back to data analysis with Simpson's paradox.
 
----
-
 # Prepare at home
+
+Please do this before you come and join the workshop!
 
 ## Getting started
 
@@ -48,7 +48,17 @@ First, open the R Markdown document `lab-05-simpsons-paradox.Rmd` and Knit it.
 Make sure it compiles without errors. The output will be in the markdown 
 `.md` file with the same name.
 
----
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  In-person workshop starts here!
+</span></p>
 
 # Warm-up with your team
 
@@ -74,9 +84,10 @@ Here's a nice way of viewing this problem. Try drawing a table like the one belo
 
 Compare the percentages in each column and see what it tells you about the effectiveness of the drug. Weird, right?
 
----
-
 # Workshop exercises
+
+These are the main exercises to work on during the workshop!
+
 ## Workflow
 
 ### Introduce yourself to Git
@@ -295,7 +306,17 @@ Whickham %>%
   ___
 ```
 
----
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  End of in-person workshop.
+</span></p>
 
 # Wrapping up
 
