@@ -492,24 +492,30 @@ text-align: center;
 <li>Summarise data.</li>
 <li>Get more practice working as a team.</li>
 </ul>
+<hr />
 </div>
-<div id="hello-teams" class="section level1">
-<h1>Hello teams!</h1>
+<div id="prepare-at-home" class="section level1">
+<h1>Prepare at home</h1>
+<p>Please do this before you come and join the workshop!</p>
+<div id="hello-teams" class="section level2">
+<h2>Hello teams!</h2>
 <p>First things first: get to know your team members. You can find your team assignment <a href="https://github.com/ids-s1-19/team-assignments/blob/master/roster-team-lab-03.csv">here</a>.</p>
 <p>Your first task as a team is to come up with a team name. Then, the <strong>team lead</strong> for this week should submit this information <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sAafLmkWiUWHiRCgaTTcYRiRHjHRDWhOuLE_6JyNA0dUNVBWSk1VVldNR082UzhURUk5RVdSUjRLUS4u">here</a>.</p>
 </div>
-<div id="workflow" class="section level1">
-<h1>Workflow</h1>
+<div id="workflow" class="section level2">
+<h2>Workflow</h2>
 <p>This is the first week you’re working in teams. You have a team repository that each member of the team has access to. You can all push to this repository, but <strong>for this week only</strong> we will keep things simple and ask that the <strong>team lead for the week is the only one who pushes</strong> while others work on together with them.</p>
 <p>Starting next week we’ll show you how you can all collectively work in a repo, the (mini) chaos that might result in (called a merge conflict), and how to resolve it.</p>
 </div>
-<div id="getting-started" class="section level1">
-<h1>Getting started</h1>
+<div id="getting-started" class="section level2">
+<h2>Getting started</h2>
 <p>Go to the course <a href="https://github.com/ids-s1-19">GitHub organization</a> and locate your Lab 03 repo, which should be named <code>lab-03-nobel-winners-YOUR_TEAMNAME</code>. Grab the URL of the repo, and clone it in RStudio. Refer to <a href="/labs/lab-01/lab-01-hello-r">Lab 01</a> if you would like to see step-by-step instructions for cloning a repo into an RStudio project.</p>
-<p>First, open the R Markdown document <code>lab-03-nobel-winners.Rmd</code> and Knit it. Make sure it compiles without errors. The output will be in the file markdown <code>.md</code> file with the same name.</p>
+<p>First, open the R Markdown document <code>lab-03-nobel-winners.Rmd</code> and Knit it. Make sure it compiles without errors. The output will be in the markdown <code>.md</code> file with the same name.</p>
+<hr />
 </div>
-<div id="warm-up" class="section level1">
-<h1>Warm-up</h1>
+</div>
+<div id="warm-up-with-your-team" class="section level1">
+<h1>Warm-up with your team</h1>
 <p>For this warm-up we will take some bad code and make it better. Before we do that, however, let’s remind ourselves what bad code is!</p>
 <p>Go back to <a href="https://introds.org/slides/w3_d1-data-wrangle/w3_d1-data-wrangle.html#1">lecture 5</a> and discuss what belongs on a <strong>short and concise</strong> checklist of what makes <em>good</em> code. Here’s something to get you started:</p>
 <ul>
@@ -519,15 +525,19 @@ text-align: center;
 <p>Armed with your new checklist, have a go at the code below and discuss where it needs improving:</p>
 <p><label for="tufte-mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle"><span class="marginnote"><span style="display: block;">Hint: Is there a common acronym for “miles per hour” that’s informative but short?</span></span></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>averagemilesperhour &lt;-<span class="kw">mean</span>(miles <span class="op">/</span>hoursTravelled, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</span></code></pre></div>
-<p>It’s a good idea to hold on to your checklist, you’ll probably want to refer to it frequently before submitting your work!</p>
+<p>It’s a good idea to hold on to your checklist, you’ll probably want to refer to it frequently before submitting your work now and in future!</p>
+<hr />
 </div>
-<div id="packages" class="section level1">
-<h1>Packages</h1>
+<div id="workshop-exercises" class="section level1">
+<h1>Workshop Exercises</h1>
+<p>These are the main exercises to work on during the workshop!</p>
+<div id="packages" class="section level2">
+<h2>Packages</h2>
 <p>We’ll use the <strong>tidyverse</strong> package for this analysis. Run the following code in the Console to load this package.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
 </div>
-<div id="data" class="section level1">
-<h1>Data</h1>
+<div id="data" class="section level2">
+<h2>Data</h2>
 <p>The dataset for this assignment can be found as a csv file in the <code>data</code> folder of your repository. You can read it in using the following.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>nobel &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/nobel.csv&quot;</span>)</span></code></pre></div>
 <p>The variable descriptions are as follows:</p>
@@ -562,9 +572,8 @@ text-align: center;
 <li><code>city_original</code>: Original city where laureate lived at the time of winning the award</li>
 <li><code>country_original</code>: Original country where laureate lived at the time of winning the award</li>
 </ul>
+<p>These are the main exercises to work on during the workshop!</p>
 </div>
-<div id="exercises" class="section level1">
-<h1>Exercises</h1>
 <div id="get-to-know-your-data" class="section level2">
 <h2>Get to know your data</h2>
 <ol style="list-style-type: decimal">
@@ -608,7 +617,12 @@ text-align: center;
 <li><p>Add a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not. Your final visualization should contain a facet for each category, within each facet a bar for whether they won the award in the US or not, and within each bar whether they were born in the US or not. Based on your visualization, do the data appear to support Buzzfeed’s claim? Explain your reasoning in 1-2 sentences.</p></li>
 </ol>
 <p>✅ ⬆️ <em>Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
+<hr />
 </div>
+</div>
+<div id="wrapping-up" class="section level1">
+<h1>Wrapping Up</h1>
+<p>This is the end of the “in person” workshop! Feel free to continue if you’re confident with the previous exercises, otherwise this is your chance to ask questions. You can finish this section in your own time.</p>
 <div id="heres-where-those-immigrant-nobelists-were-born" class="section level2">
 <h2>Here’s where those immigrant Nobelists were born</h2>
 <p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote"><span style="display: block;">Note that your bar plot won’t exactly match the one from the Buzzfeed article. This is likely because the data has been updated since the article was published.</span></span></p>
@@ -616,18 +630,15 @@ text-align: center;
 <li>In a single pipeline, filter for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the <code>count()</code>) function for their birth country, <code>born_country</code>, and arrange the resulting data frame in descending order of number of observations for each country.</li>
 </ol>
 <p>✅ ⬆️ <em>Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
-</div>
-</div>
-<div id="wrapping-up" class="section level1">
-<h1>Wrapping up</h1>
-<p>Go back through your write up to make sure you’re following coding style guidelines we discussed in class. Make any edits as needed.</p>
+<p>Now go back through your write up to make sure you’re following coding style guidelines we discussed in class. Make any edits as needed.</p>
 <p>Also, make sure all of your R chunks are properly labeled, and your figures are reasonably sized.</p>
 <p>Once the team leader for the week pushes their final changes, others should also clone the team repo (or if you’ve already done so, <em>pull</em> on the Git pane) and knit the R Markdown document to confirm that they can reproduce the report.</p>
 <p>If you haven’t yet submitted your team name, don’t forget to do so <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=sAafLmkWiUWHiRCgaTTcYRiRHjHRDWhOuLE_6JyNA0dUNVBWSk1VVldNR082UzhURUk5RVdSUjRLUS4u">here</a>.</p>
 </div>
-<div id="interested-in-how-buzzfeed-made-their-visualizations" class="section level1">
-<h1>Interested in how Buzzfeed made their visualizations?</h1>
+<div id="interested-in-how-buzzfeed-made-their-visualizations" class="section level2">
+<h2>Interested in how Buzzfeed made their visualizations?</h2>
 <p>The plots in the Buzzfeed article are called waffle plots. You can find the code used for making these plots in Buzzfeed’s GitHub repo (yes, they have one!) <a href="https://buzzfeednews.github.io/2017-01-immigration-and-science/">here</a>. You’re not expected to recreate them as part of your assignment, but you’re welcomed to do so for fun!</p>
+</div>
 </div>
 
 
