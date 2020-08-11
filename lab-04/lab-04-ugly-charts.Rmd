@@ -35,8 +35,6 @@ improved visualizations and the reasoning for the choices you made.
 - Reshaping data.
 - Merge conflicts
 
----
-
 # Prepare at home
 
 Please do this before you come and join the workshop!
@@ -70,7 +68,17 @@ use_git_config(user.name = "Your Name",
                user.email = "your.email@address.com")
 ``` 
 
----
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  In-person workshop starts here!
+</span></p>
 
 # Warm-up with your team
 
@@ -80,8 +88,6 @@ Before we get to work let's play a little game! Can you find all the errors in t
 ```{r echo=FALSE, fig.fullwidth=TRUE}
 knitr::include_graphics("img/Speaking-the-world.jpg")
 ```
-
----
 
 # Workshop exercises
 
@@ -184,7 +190,6 @@ pivot_longer(data, cols, names_to = "name")
 into longer format -- in this case all columns except for the `faculty_type` 
 - The third argument, `names_to`, is a string specifying the name of the column to create from the data stored in the column names of data -- in this case `year`
 
-
 ```{r}
 staff_long <- staff %>%
   pivot_longer(cols = -faculty_type, names_to = "year") %>%
@@ -230,7 +235,17 @@ homework will be.)
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
----
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  End of in-person workshop.
+</span></p>
 
 # Wrapping up
 
