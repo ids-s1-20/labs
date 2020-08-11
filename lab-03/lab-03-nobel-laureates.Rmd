@@ -48,6 +48,18 @@ Go to the course [GitHub organization](https://github.com/ids-s1-19) and locate 
 
 First, open the R Markdown document `lab-03-nobel-winners.Rmd` and Knit it. Make sure it compiles without errors. The output will be in the markdown `.md` file with the same name.
 
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  In-person workshop starts here!
+</span></p>
+
 # Warm-up with your team
 
 For this warm-up we will take some bad code and make it better. Before we do that,
@@ -74,17 +86,7 @@ averagemilesperhour <-mean(miles /hoursTravelled, na.rm=TRUE)
 It's a good idea to hold on to your checklist, you'll probably want to refer to
 it frequently before submitting your work now and in future!
 
-<p><span style="
-  width: auto;
-  display: block;
-  background:#6A9FDE;
-  color:#ffffff;
-  text-align:center;
-  padding:0.7em;
-  border-radius:4px;
-">
-  In-person workshop starts here!
-</span></p>
+
 
 # Workshop Exercises
 
@@ -129,7 +131,7 @@ The variable descriptions are as follows:
 - `share`: Number of other winners award is shared with
 - `motivation`: Motivation for recognition
 
-In a few cases the name of the city/country changed after laureate was given (e.g. in 1975 Bosnia and Herzegovina was called Austria-Hungary). In these cases the variables below reflect a different name than their counterparts without the suffix `_original`.
+In a few cases the name of the city/country changed after laureate was given (e.g. in 1975 Bosnia and Herzegovina was called the Socialist Federative Republic of Yugoslavia). In these cases the variables below reflect a different name than their counterparts without the suffix `_original`.
 
 - `born_country_original`: Original country where laureate was born
 - `born_city_original`: Original city where laureate was born
