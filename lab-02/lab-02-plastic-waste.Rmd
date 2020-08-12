@@ -100,7 +100,7 @@ Hint: If you're not sure, run the command `?NA` which will lead you to the docum
   </ul>
 </details>
 
-# Exercises
+# Workshop Exercises
 
 Let's start by taking a look at the distribution of plastic waste per capita in 2010.
 
