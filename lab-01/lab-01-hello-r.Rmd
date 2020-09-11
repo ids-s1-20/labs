@@ -15,6 +15,26 @@ link-citations: yes
 - Appreciate the value of visualization in exploring the relationship between variables.
 - Start using R for building plots and calculating summary statistics.
 
+# Prepare at home 
+
+You will be asked to do some tasks before each lab. Since this is our first lab, I don't expect you to have done any work yet but please make sure you prepare before you come and join the workshop next time!
+
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  In-person workshop starts here!
+</span></p>
+
+# Introduce yourself
+
+At the start of each session, you will be given a 5-minute warm-up excercise to discuss with your group. This time, use this as an opportunity to meet your course mates. What's everyone's favourite emoji and why? And the least favourite?
+
 # Terminology
 
 We've already thrown around a few new terms, so let's define them before we proceed.
@@ -347,12 +367,20 @@ Not sure how to use emojis on your computer? Maybe a class mate can help? Or you
 
 *Yay, you're done! Commit all remaining changes, use the commit message "Done with Lab 1! `r emo::ji("muscle")`", and push. Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.*
 
-<br>
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  End of in-person workshop.
+</span></p>
 
----
-
-# Getting to know you
+# Wrapping up
 
 If you're done with your lab, use the remaining time to take the [Getting to know you survey](https://forms.office.com/Pages/ResponsePage.aspx?id=sAafLmkWiUWHiRCgaTTcYRiRHjHRDWhOuLE_6JyNA0dUN0FDUVBVMVo5NzhMSTA5MFZGQTNRWkNZVS4u). If time is up for the lab session, complete the survey at home before tomorrow's class.
 
-
+If you haven't had time to finish -- that's okay! Take your time and complete the lab whenever you're free, just make sure to do so before the next lab.
