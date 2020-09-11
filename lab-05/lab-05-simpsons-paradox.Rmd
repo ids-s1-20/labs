@@ -15,7 +15,7 @@ library(kableExtra)
 library(tidyverse)
 ```
 
----
+# Learning Goals
 
 ```{marginfigure}
 **Learning goals:**  
@@ -27,7 +27,11 @@ This week in workshop the theme is paradoxes and conflicts. That is, we will
 first (finally!) get to the bottom of merge conflicts and then return our 
 attention back to data analysis with Simpson's paradox.
 
-# Getting started
+# Prepare at home
+
+Please do this before you come and join the workshop!
+
+## Getting started
 
 ```{marginfigure}
 You can find your team assignment for the rest of the semester [here](https://github.com/ids-s1-19/team-assignments/blob/master/roster-team.csv).
@@ -41,12 +45,52 @@ Grab the URL of the repo, and clone it in RStudio Cloud. Refer to [Lab 01](/labs
 instructions for cloning a repo into an RStudio project.
 
 First, open the R Markdown document `lab-05-simpsons-paradox.Rmd` and Knit it. 
-Make sure it compiles without errors. The output will be in the file markdown 
+Make sure it compiles without errors. The output will be in the markdown 
 `.md` file with the same name.
 
-# Workflow
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  In-person workshop starts here!
+</span></p>
 
-## Introduce yourself to Git
+# Warm-up with your team
+
+Today's warm-up is on the importance of context. Discuss the following situation with your group.
+
+We are testing a drug for cats and dogs and record the data for
+each of them separately. We observe the following.
+
+Out of 100 dogs who were given the treatment all of them survive and out of 200 dogs who weren't given the treatment only 150 of them survive. Does it seem like the treatment is effective?
+
+Out of 200 cats who were given the treatment, only 50 of them survived and out of 100 who weren't given the treatment, none of them survived. Is the treatment effective?
+
+Now combine the data, can we say that the treatment is effective for the whole group of cats and dogs? What went wrong?
+
+Here's a nice way of viewing this problem. Try drawing a table like the one below and fill in the cells with the _percentage_ of cats, dogs and both, who survived. 
+
+
+|              | Cats| Dogs  | Cats + Dogs |
+|--------------|-----|-------|-------------|
+| Treatment    |     |       |             |
+| No Treatment |     |       |             |
+|              |     |       |             |
+
+Compare the percentages in each column and see what it tells you about the effectiveness of the drug. Weird, right?
+
+# Workshop exercises
+
+These are the main exercises to work on during the workshop!
+
+## Workflow
+
+### Introduce yourself to Git
 
 ```{marginfigure}
 Your email address is the address tied to your GitHub account and your name 
@@ -66,7 +110,7 @@ use_git_config(user.name = "Your Name",
                user.email = "your.email@address.com")
 ``` 
 
-## Merge conflicts
+### Merge conflicts
 
 This is the third week you're working in teams, so we're going to make things a 
 little more interesting and let all of you make changes and push those changes 
@@ -78,12 +122,12 @@ git merges these two files.
 - If these two files have conflicting content on the same line, git will produce 
 a **merge conflict**.
 
-### Set up
+#### Set up
 
 - Clone the repo for your next assignment in RStudio, and open the .Rmd file.
 - Assign the numbers 1, 2, 3, and 4 to each of the team members.
 
-### Let's cause a merge conflict!
+#### Let's cause a merge conflict!
 
 Take turns in completing the exercise, only one member at a time.
 
@@ -97,7 +141,7 @@ Take turns in completing the exercise, only one member at a time.
 `r emo::ji("stop_sign")` Wait for instructions before moving on to the next step.  
 - **All members:** Pull, and observe the changes in your document.
 
-## Tips for collaborating via GitHub
+### Tips for collaborating via GitHub
 
 - Always pull first before you start working.
 - Commit, and push, often to minimize merge conflicts and/or to make merge conflicts 
@@ -105,9 +149,9 @@ easier to resolve.
 - If you find yourself in a situation that is difficult to resolve, ask questions 
 asap, don't let it linger and get bigger.
 
-# Simpson's paradox
+## Simpson's paradox
 
-## What is Simpson's paradox?
+### What is Simpson's paradox?
 
 Consider the following dataset with two variables `x` and `y`.
 
@@ -190,15 +234,15 @@ variable when studying a relationship can result in **Simpson's paradox**, which
 illustrates the effect the omission of an explanatory variable can have on the 
 measure of association between another explanatory variable and a response variable. 
 
-## Age, smoking, and mortality in Whickham
+### Age, smoking, and mortality in Whickham
 
-In this lab we will work with data on age, smoking, and mormatiligy from a 
+In this lab we will work with data on age, smoking, and mortality from a 
 survey of the electoral roll in Whickham, a mixed urban and rural district near 
 Newcastle upon Tyne, in the UK. The survey was conducted in 1972-1974 to study 
 heart disease and thyroid disease. A follow-up on those in the survey was 
 conducted twenty years later.
 
-### Packages
+#### Packages
 
 In this lab we will work with the `tidyverse` and `mosaicData` packages.
 
@@ -209,7 +253,7 @@ library(mosaicData)
 
 Note that these packages are also loaded in your R Markdown document.
 
-### The data
+#### The data
 
 The data is in the `mosaicData` package.
 
@@ -219,7 +263,7 @@ Take a peek at the codebook with
 ?Whickham
 ```
 
-### Exercises
+#### Exercises
 
 Take turns answering these questions. For example, the team leader can write the 
 responses to the first question, commit and push to GitHub. Then, all members 
@@ -262,6 +306,22 @@ Whickham %>%
   ___
 ```
 
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  End of in-person workshop.
+</span></p>
+
+# Wrapping up
+
+This is the end of the "in person" workshop. Feel free to continue with the following exercises if you're confident with what you've done so far, otherwise please ask questions!
+
 6. Create a new variable called `age_cat` using the following scheme:
 
 - `age <= 44 ~ "18-44"`
@@ -280,7 +340,6 @@ Whickham %>%
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-# Wrapping up
 
 Go back through your write up to make sure you're following coding style 
 guidelines we discussed in class. Make any edits as needed.
@@ -292,7 +351,7 @@ Once the team member who answered the last question pushes their final changes,
 others should *pull* the changes and knit the R Markdown document to confirm 
 that they can reproduce the report.
 
-# Mid-semester feedback
+## Mid-semester feedback
 
 Before you leave the workshop, please take a few minutes to provide mid-semester 
 feedback for the course [here](https://www.learn.ed.ac.uk/webapps/assessment/take/launchAssessment.jsp?course_id=_75012_1&content_id=_4369037_1&mode=cpview). This is an anomnymous survey, and 
@@ -300,7 +359,7 @@ we will share results and any steps we're taking based on the feedback with you
 next week. If you run out of time during the workshop, you have until Friday, 
 Oct 18, 17:00 to take the survey.
 
-# More Simpson's paradox
+## More Simpson's paradox
 
 Want to read more Simpson's paradox examples?
 
