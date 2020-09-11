@@ -20,7 +20,7 @@ And then click on new project from Git.
 Given below are three data visualizations that violate many data visualization 
 best practices. Improve these visualizations using R and the tips for effective 
 visualizations that we introduced in class. You should produce one visualization 
-per dataset. Your visualizaiton should be accompanies by a brief paragraph 
+per dataset. Your visualization should be accompanied by a brief paragraph 
 describing the choices you made in your improvement, specifically discussing 
 what you didn't like in the original plots and why, and how you addressed them 
 in the visualization you created.
@@ -35,20 +35,24 @@ improved visualizations and the reasoning for the choices you made.
 - Reshaping data.
 - Merge conflicts
 
-# Hello (again) teams!
+# Prepare at home
+
+Please do this before you come and join the workshop!
+
+## Hello (again) teams!
 
 First things first: get to know your team members. You can find your team assignment 
 for the rest of the semester [here](https://github.com/ids-s1-19/team-assignments/blob/master/roster-team.csv).
 
 If there are any issues with the team roster, please let one of the tutors or the professor know asap!
 
-# Getting started
+## Getting started
 
 Go to the course [GitHub organization](https://github.com/ids-s1-19) and locate your Lab 04 repo, which should be named `lab-04-ugly-charts-YOUR_TEAMNAME`. Grab the URL of the repo, and clone it in RStudio. Refer to [Lab 01](/labs/lab-01/lab-01-hello-r) if you would like to see step-by-step instructions for cloning a repo into an RStudio project.
 
-First, open the R Markdown document `lab-04-ugly-charts.Rmd` and Knit it. Make sure it compiles without errors. The output will be in the file markdown `.md` file with the same name.
+First, open the R Markdown document `lab-04-ugly-charts.Rmd` and Knit it. Make sure it compiles without errors. The output will be in the markdown `.md` file with the same name.
 
-# Hello Git!
+## Hello Git!
 
 ```{marginfigure}
 Your email address is the address tied to your GitHub account and your name should be first and last name.
@@ -64,21 +68,46 @@ use_git_config(user.name = "Your Name",
                user.email = "your.email@address.com")
 ``` 
 
-# Workflow
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  In-person workshop starts here!
+</span></p>
+
+# Warm-up with your team
+
+Before we get to work let's play a little game! Can you find all the errors in this graph? How could you fix them?
+
+
+```{r echo=FALSE, fig.fullwidth=TRUE}
+knitr::include_graphics("img/Speaking-the-world.jpg")
+```
+
+# Workshop exercises
+
+These are the main exercises to work on during the workshop!
+
+## Workflow
 
 This is the second week you're working in teams, so we're going to make things a little more interesting and let all of you make changes and push those changes to your team repository. Sometimes things will go swimmingly, and sometimes you'll run into merge conflicts. So our first task today is to walk you through a merge conflict!
 
-## Merge conflicts
+### Merge conflicts
 
 - When two collaborators make changes to a file and push the file to their repo, git merges these two files.
 - If these two files have conflicting content on the same line, git will produce a **merge conflict**.
 
-## Set up
+### Set up
 
 - Clone the repo for your next assignment in RStudio, and open the .Rmd file.
 - Assign the numbers 1, 2, 3, and 4 to each of the team members.
 
-## Let's cause a merge conflict!
+### Let's cause a merge conflict!
 
 Take turns in completing the exercise, only one member at a time.
 
@@ -92,13 +121,13 @@ Take turns in completing the exercise, only one member at a time.
 `r emo::ji("stop_sign")` Wait for instructions before moving on to the next step.  
 - **All members:** Pull, and observe the changes in your document.
 
-## Tips for collaborating via GitHub
+### Tips for collaborating via GitHub
 
 - Always pull first before you start working.
 - Commit, and push, often to minimize merge conflicts and/or to make merge conflicts easier to resolve.
 - If you find yourself in a situation that is difficult to resolve, ask questions asap, don't let it linger and get bigger.
 
-# Packages
+## Packages
 
 Run the following code in the Console to load this package.
 
@@ -106,9 +135,9 @@ Run the following code in the Console to load this package.
 library(tidyverse)
 ```
 
-# Take a sad plot and make it better
+## Take a sad plot and make it better
 
-## Instructional staff employment trends
+### Instructional staff employment trends
 
 The American Association of 
 University Professors (AAUP) is a nonprofit membership association of faculty 
@@ -161,7 +190,6 @@ pivot_longer(data, cols, names_to = "name")
 into longer format -- in this case all columns except for the `faculty_type` 
 - The third argument, `names_to`, is a string specifying the name of the column to create from the data stored in the column names of data -- in this case `year`
 
-
 ```{r}
 staff_long <- staff %>%
   pivot_longer(cols = -faculty_type, names_to = "year") %>%
@@ -183,7 +211,7 @@ staff_long %>%
   geom_line()
 ```
 
-But note that this resuls in a message as well as an unexpected plot. The 
+But note that this results in a message as well as an unexpected plot. The 
 message is saying that there is only one observation for each faculty type 
 year combination. We can fix this using the `group` aesthetic following.
 
@@ -207,7 +235,23 @@ homework will be.)
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-## Fisheries
+<p><span style="
+  width: auto;
+  display: block;
+  background:#6A9FDE;
+  color:#ffffff;
+  text-align:center;
+  padding:0.7em;
+  border-radius:4px;
+">
+  End of in-person workshop.
+</span></p>
+
+# Wrapping up
+
+This is the end of the "in person" workshop! Feel free to continue if you're confident with the previous exercises, otherwise this is your chance to ask questions. You can finish this section in your own time.
+
+### Fisheries
 
 Fisheries and Aquaculture Department of the Food and 
 Agriculture Organization of the United Nations collects data on fisheries 
@@ -236,7 +280,10 @@ fisheries <- read_csv("data/fisheries.csv")
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-# Wrapping up
+
+
+This is to finish up the workshop. Depending on the time you may need to do this
+after the workshop ended.
 
 Go back through your write up to make sure you're following coding style 
 guidelines we discussed in class. Make any edits as needed.
