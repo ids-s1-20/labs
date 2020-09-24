@@ -77,3 +77,5 @@ knitr::include_graphics("img/github-auth-5.png")
 ```{r github-auth-6, echo = FALSE}
 knitr::include_graphics("img/github-auth-6.png")
 ```
+
+Once you're done with these steps, you're done with Lab 00! You do not need to turn in anything for this lab. However, note that you must have completed all of these steps before you can start on your homework assignment.
