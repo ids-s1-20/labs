@@ -35,7 +35,7 @@ of the workshop we will work on fitting, interpreting, and evaluating the fit
 of various multiple regression models predicting evaluation scores from 
 beauty score along with other variables like gender and rank of the professor.
 
-# Getting started
+# Prepare at home
 
 ## Clone your repo
 
@@ -90,7 +90,7 @@ Then, you can load the data as usual using the following.
 evals <- read_csv("data/evals-mod.csv")
 ```
 
-# Part 1: Data Manipulation 
+## Data Manipulation 
 
 1.  Create a new variable called `bty_avg` that is the average attractiveness
     score of the six students for each professor (`bty_f1lower` through 
@@ -105,7 +105,7 @@ evals <- evals %>%
 If you have questions about what is happening in the code above, refer to 
 [last week's lab](/labs/lab-07/lab-07-model-course-evals.html).
 
-# Part 2: Simple linear regression
+## Simple linear regression
 
 We start with a linear model for predicting average professor evaluation `score` 
 based on average beauty rating (`bty_avg`) only.
@@ -226,12 +226,30 @@ others you will encounter in future courses.
 **Hint:** You can use `geom_hline()` with `linetype = "dashed"` for this.
 ```
 
+# Warm-up
+
+Recall that you were asked to write a linear model for predicting average professor evaluation score based on average beauty rating (bty_avg) only and analyze it. Before we get to work let's quickly go through that task.  
+
+## Discuss!
+
+- How did you interpret the $R^2$ of 
+   the model. 
+- Is it correct that the profit is 70% of the model? Explain your answer. 
+- Which function did you use to obtain the slope and intercept estimates from the 
+   tidy model output?
+- Which function did you use to obtain the $R^2$?
+
+# Workshop exercises
+ 
+ 
 3. Make a residuals vs. predicted values plot for the model above. Use 
    `geom_jitter()` instead of `geom_point()`, and overlay a dashed horizontal 
    line at `y = 0`. Then, comment on whether the linear model is appropriate for 
    modeling the relationship between evaluation scores and beauty scores.
 
-# Part 3: Multiple linear regression
+
+
+## Multiple linear regression
 
 Next, we fit a multiple linear regression model, predicting average professor 
 evaluation `score` based on average beauty rating (`bty_avg`) and `gender`:
@@ -266,6 +284,12 @@ m_bty_gen <- lm(score ~ bty_avg + gender, data = evals)
 
 12. Compare the slopes of `bty_avg` under the two models (`m_bty` and `m_bty_gen`). Has the 
     addition of `gender` to the model changed the parameter estimate (slope) for `bty_avg`?
+    
+# Wrapping up
+
+This is to finish up the workshop. Depending on the time you may need to do this
+after the workshop ended.
+    
     
 13. Create a new model called `m_bty_gen_rank` predicting average professor evaluation 
    `score` based on average beauty rating (`bty_avg`), `gender`, and `rank`.  

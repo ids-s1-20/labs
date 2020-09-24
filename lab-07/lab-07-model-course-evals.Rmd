@@ -68,7 +68,7 @@ The variables in the data and their descriptions are as follows:
 In this week's workshop you will analyze the data from this study in order to 
 start exploring what goes into a positive professor evaluation.
 
-# Getting started
+# Prepare at home
 
 ## Clone your repo
 
@@ -125,7 +125,7 @@ library(broom)
 
 
 
-# Part 1: Data Manipulation 
+## Data Manipulation 
 
 1.  Create a new variable called `bty_avg` that is the average attractiveness
     score of the six students for each professor (`bty_f1lower` through 
@@ -142,7 +142,20 @@ We are mutating the `evals` data frame by adding a new variable, `bty_avg`,
 that is calculated as the mean of the columns titled `bty_f1lower` through 
 `bty_m2upper` in the `evals` data frame (denoted with a `.` here).
 
-# Part 2: Exploratory Data Analysis
+# Warm-up
+
+Before we get to work let’s play a little game! Each think of your three favorite professors and give them ratings from 1 to 5. How would you rate their appearance?  Compare your results with the graphic below.  
+
+```{r echo=FALSE, fig.fullwidth=TRUE}
+knitr::include_graphics("img/pic1.png")
+```
+
+# Workshop exercises
+
+These are the main exercises to work on during the workshop!
+
+##  Exploratory Data Analysis
+Now let's get back to the given data and discuss.
 
 2.  Visualize the distribution of `score`. Is the distribution skewed? What does 
     that tell you about how students rate courses? Is this what you expected to 
@@ -156,10 +169,16 @@ that is calculated as the mean of the columns titled `bty_f1lower` through
 **Hint:** See the help page for the function at http://ggplot2.tidyverse.org/reference/index.html.
 ```
     
+
+
 4.  Replot the scatterplot from Exercise 3, but this time use `geom_jitter()`? 
     What does "jitter" mean? What was misleading about the initial scatterplot?
 
-# Part 3: Linear regression with a numerical predictor
+
+
+
+
+## Linear regression with a numerical predictor
 
 ```{marginfigure}
 Linear model is in the form $\hat{y} = b_0 + b_1 x$.
@@ -185,7 +204,7 @@ Refer back to this week's reading if you don't remember what $R^2$ means.
 9.  Determine the $R^2$ of the model and interpret it in context of the data. 
     You can obtain this value with `glance(m_bty)`.
 
-# Part 4: Linear regression with a categorical predictor
+## Linear regression with a categorical predictor
 
 10. Fit a new linear model called `m_gen` to predict average professor evaluation `score` 
     based on `gender` of the professor. Based on the regression output, write the linear 
@@ -201,6 +220,12 @@ Refer back to this week's reading if you don't remember what $R^2$ means.
 ```{marginfigure}
 Refer to the [forcats package](http://forcats.tidyverse.org/) for changing the order of levels.
 ```
+
+# Wrapping up
+
+This is to finish up the workshop. Depending on the time you may need to do this
+after the workshop ended.
+
 
 13. Create a new variable called `rank_relevel` where `"tenure track"` is the baseline level. 
 

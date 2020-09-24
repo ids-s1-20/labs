@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
 
@@ -136,6 +135,7 @@ hr { margin-left: 0; }
 table table, li p, li pre { width: auto; }
 li p, li pre {margin-top: auto; }
 div.fullwidth, table.fullwidth { max-width: 90%; }
+div.fullwidth > * { width: auto; }
 #TOC, h1.title { max-width: 90%; }
 #TOC ol, #TOC ul { width: auto; }
 div.fullwidth p.caption {
@@ -200,6 +200,22 @@ color: #222;
 }
 .numeral, .sidenote-number { font-family: "Roboto Condensed"; }
 </style>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
 
 
 
@@ -379,7 +395,7 @@ text-align: center;
 
 
 
-<p>This week you’ll be working on your projects. Here are a few to do items to get you started. Once you complete these, use the rest of the time to, well, work on your prokect!</p>
+<p>This week you’ll be working on your projects. Here are a few to do items to get you started. Once you complete these, use the rest of the time to, well, work on your project!</p>
 <ul>
 <li>Remind yourself of the <a href="https://introds.org/#project">project assignment</a></li>
 <li>Go to the course organization on GitHub, <a href="https://github.com/ids-s1-19">ids-s1-19</a> and clone your project repo titled <code>project-TEAM_NAME</code></li>

@@ -15,7 +15,7 @@ knitr::opts_chunk$set(eval = TRUE)
 
 This week you'll be working on your projects. Here are a few to do items to get 
 you started. Once you complete these, use the rest of the time to, well, 
-work on your prokect!
+work on your project!
 
 - Remind yourself of the [project assignment](https://introds.org/#project)
 - Go to the course organization on GitHub, [ids-s1-19](https://github.com/ids-s1-19)

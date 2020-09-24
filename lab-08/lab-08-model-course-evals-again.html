@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
 
@@ -136,6 +135,7 @@ hr { margin-left: 0; }
 table table, li p, li pre { width: auto; }
 li p, li pre {margin-top: auto; }
 div.fullwidth, table.fullwidth { max-width: 90%; }
+div.fullwidth > * { width: auto; }
 #TOC, h1.title { max-width: 90%; }
 #TOC ol, #TOC ul { width: auto; }
 div.fullwidth p.caption {
@@ -200,13 +200,29 @@ color: #222;
 }
 .numeral, .sidenote-number { font-family: "Roboto Condensed"; }
 </style>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -216,14 +232,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -232,9 +250,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -467,15 +485,21 @@ text-align: center;
 
 <div id="TOC">
 <ul>
-<li><a href="#getting-started">Getting started</a><ul>
+<li><a href="#prepare-at-home">Prepare at home</a><ul>
 <li><a href="#clone-your-repo">Clone your repo</a></li>
 <li><a href="#introduce-yourself-to-git">Introduce yourself to Git</a></li>
 <li><a href="#load-packages">Load packages</a></li>
 <li><a href="#download-the-data">Download the data</a></li>
+<li><a href="#data-manipulation">Data Manipulation</a></li>
+<li><a href="#simple-linear-regression">Simple linear regression</a></li>
 </ul></li>
-<li><a href="#part-1-data-manipulation">Part 1: Data Manipulation</a></li>
-<li><a href="#part-2-simple-linear-regression">Part 2: Simple linear regression</a></li>
-<li><a href="#part-3-multiple-linear-regression">Part 3: Multiple linear regression</a></li>
+<li><a href="#warm-up">Warm-up</a><ul>
+<li><a href="#discuss">Discuss!</a></li>
+</ul></li>
+<li><a href="#workshop-exercises">Workshop exercises</a><ul>
+<li><a href="#multiple-linear-regression">Multiple linear regression</a></li>
+</ul></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
 </ul>
 </div>
 
@@ -483,8 +507,8 @@ text-align: center;
 <p>This week we revisit the professor evaluations data we modeled in the previous lab. In the last lab we modeled evaluation scores using a single predictor at a time. However this time we use multiple predictors to model evaluation scores.</p>
 <p>If you don’t remember the data, review the <a href="/labs/lab-07/lab-07-model-course-evals.html">previous lab</a> before continuing to the exercises.</p>
 <p>As before, we will start with a data prep step where we calculate average beauty scores for each professor. Then we’ll fit a simple linear regression model predicting evaluation score from beauty score. And then for the majority of the workshop we will work on fitting, interpreting, and evaluating the fit of various multiple regression models predicting evaluation scores from beauty score along with other variables like gender and rank of the professor.</p>
-<div id="getting-started" class="section level1">
-<h1>Getting started</h1>
+<div id="prepare-at-home" class="section level1">
+<h1>Prepare at home</h1>
 <div id="clone-your-repo" class="section level2">
 <h2>Clone your repo</h2>
 <p><label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote"><span style="display: block;">You can find your team assignment for the rest of the semester <a href="https://github.com/ids-s1-19/team-assignments/blob/master/roster-team.csv">here</a>.</span></span></p>
@@ -494,15 +518,15 @@ text-align: center;
 <h2>Introduce yourself to Git</h2>
 <p><label for="tufte-mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle"><span class="marginnote"><span style="display: block;">Your email address is the address tied to your GitHub account and your name should be first and last name.</span></span></p>
 <p>Run the following (but update it for your name and email!) in the Console to configure Git:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(usethis)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">use_git_config</span>(<span class="dt">user.name =</span> <span class="st">&quot;Your Name&quot;</span>, </a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">               <span class="dt">user.email =</span> <span class="st">&quot;your.email@address.com&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(usethis)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">use_git_config</span>(<span class="dt">user.name =</span> <span class="st">&quot;Your Name&quot;</span>, </span>
+<span id="cb1-3"><a href="#cb1-3"></a>               <span class="dt">user.email =</span> <span class="st">&quot;your.email@address.com&quot;</span>)</span></code></pre></div>
 </div>
 <div id="load-packages" class="section level2">
 <h2>Load packages</h2>
 <p>We will use the following packages in this analysis:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(broom)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">library</span>(broom)</span></code></pre></div>
 </div>
 <div id="download-the-data" class="section level2">
 <h2>Download the data</h2>
@@ -517,75 +541,90 @@ text-align: center;
 <li>Navigate to the data folder in your project and upload the <code>evals-mod.csv</code> file.</li>
 </ul>
 <p>Then, you can load the data as usual using the following.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">evals &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/evals-mod.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>evals &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/evals-mod.csv&quot;</span>)</span></code></pre></div>
 </div>
-</div>
-<div id="part-1-data-manipulation" class="section level1">
-<h1>Part 1: Data Manipulation</h1>
+<div id="data-manipulation" class="section level2">
+<h2>Data Manipulation</h2>
 <ol style="list-style-type: decimal">
 <li>Create a new variable called <code>bty_avg</code> that is the average attractiveness score of the six students for each professor (<code>bty_f1lower</code> through <code>bty_m2upper</code>). Add this new variable to the <code>evals</code> data frame. Do this in one pipe, using the <code>rowMeans()</code> function within a <code>mutate()</code>.</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">evals &lt;-<span class="st"> </span>evals <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bty_avg =</span> <span class="kw">rowMeans</span>(<span class="kw">select</span>(., bty_f1lower<span class="op">:</span>bty_m2upper)))</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>evals &lt;-<span class="st"> </span>evals <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bty_avg =</span> <span class="kw">rowMeans</span>(<span class="kw">select</span>(., bty_f1lower<span class="op">:</span>bty_m2upper)))</span></code></pre></div>
 <p>If you have questions about what is happening in the code above, refer to <a href="/labs/lab-07/lab-07-model-course-evals.html">last week’s lab</a>.</p>
 </div>
-<div id="part-2-simple-linear-regression" class="section level1">
-<h1>Part 2: Simple linear regression</h1>
+<div id="simple-linear-regression" class="section level2">
+<h2>Simple linear regression</h2>
 <p>We start with a linear model for predicting average professor evaluation <code>score</code> based on average beauty rating (<code>bty_avg</code>) only.</p>
 <p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Remember:</strong> The linear model is of the form <span class="math inline"><span class="math inline">\(\hat{y} = b_0 + b_1 * x\)</span></span>, but you should replace <span class="math inline"><span class="math inline">\(y\)</span></span> and <span class="math inline"><span class="math inline">\(x\)</span></span> with the actual variables and <span class="math inline"><span class="math inline">\(b_0\)</span></span> and <span class="math inline"><span class="math inline">\(b_1\)</span></span> with the model estimates. Unfortunately math text doesn’t work well in GitHub documents, so instead of <span class="math inline"><span class="math inline">\(\hat{y}\)</span></span>, you can type out y-hat.</span></span></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Write the linear model, interpret the slope, the intercept, and the <span class="math inline">\(R^2\)</span> of the model. Use <code>tidy()</code> to obtain the slope and intercept estimates from the tidy model output, and <code>glance()</code> to obtain the <span class="math inline">\(R^2\)</span>. Your answer should use inline code. Below are some tips for extracting these values from the model output to use in your inline code.</li>
 </ol>
 <p>Let’s start with the intercept. You have two options for extracting the value of the intercept from the regression output. Remember, the output looks like this:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">tidy</span>(m_bty)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">tidy</span>(m_bty)</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 5
 ##   term        estimate std.error statistic   p.value
 ##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
 ## 1 (Intercept)   3.88      0.0761     51.0  1.56e-191
 ## 2 bty_avg       0.0666    0.0163      4.09 5.08e-  5</code></pre>
 <p>So the intercept is in the <code>estimate</code> column, and it’s the first element in there.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># Option 1</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">tidy</span>(m_bty)<span class="op">$</span>estimate[<span class="dv">1</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Option 1</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">tidy</span>(m_bty)<span class="op">$</span>estimate[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 3.880333</code></pre>
 <p>We can also extract it using a dplyr pipeline:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># Option 2</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">tidy</span>(m_bty) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;(Intercept)&quot;</span>) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># filter for the intercept</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="st">  </span><span class="kw">select</span>(estimate) <span class="op">%&gt;%</span><span class="st">                </span><span class="co"># select the estimate column</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="st">  </span><span class="kw">pull</span>()                              <span class="co"># pull value out of data frame</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Option 2</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="kw">tidy</span>(m_bty) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="st">  </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;(Intercept)&quot;</span>) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># filter for the intercept</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="st">  </span><span class="kw">select</span>(estimate) <span class="op">%&gt;%</span><span class="st">                </span><span class="co"># select the estimate column</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="st">  </span><span class="kw">pull</span>()                              <span class="co"># pull value out of data frame</span></span></code></pre></div>
 <pre><code>## [1] 3.880333</code></pre>
 <p>Regardless of which option you use, you might consider storing the value in an object that you can easily refer to in your inline code, e.g.</p>
 <p><label for="tufte-mn-5" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-5" class="margin-toggle"><span class="marginnote"><span style="display: block;">You can hide the code for chunks like this where you are simply preparing objects for later use by adding <code>echo = FALSE</code> in the code chunk options, that is, where you label your code chunk, separated by a comma, i.e.<br /> <code>{r label, echo = FALSE}</code></span></span></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">m_bty_intercept &lt;-<span class="st"> </span><span class="kw">tidy</span>(m_bty) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;(Intercept)&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="st">  </span><span class="kw">select</span>(estimate) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="st">  </span><span class="kw">pull</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>m_bty_intercept &lt;-<span class="st"> </span><span class="kw">tidy</span>(m_bty) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="st">  </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;(Intercept)&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="st">  </span><span class="kw">select</span>(estimate) <span class="op">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="st">  </span><span class="kw">pull</span>()</span></code></pre></div>
 <p>And then, you can use the <code>m_bty_intercept</code> in inline code, e.g.</p>
-<pre><code>The intercept of the model is 'r m_bty_intercept'...</code></pre>
+<pre><code>The intercept of the model is &#39;r m_bty_intercept&#39;...</code></pre>
 <p>which will render to</p>
 <pre><code>The intercept of the model is 3.8803326...</code></pre>
 <p>There is still one small issue here though, the number of decimal places reported. It would be better to round the value in our narrative, for which we can use the <code>round()</code> function. This function takes two arguments: the first one is the value (or vector of values) you want to round, and the second one is the number of digits.</p>
-<pre><code>The intercept of the model is 'r round(m_bty_intercept, 2)'...</code></pre>
+<pre><code>The intercept of the model is &#39;r round(m_bty_intercept, 2)&#39;...</code></pre>
 <p>which will render to</p>
 <pre><code>The intercept of the model is 3.88...</code></pre>
 <p><br></p>
 <p>We should also use a graphical diagnostic, the residuals plot, to assess model fit. To do so we need to calculate the predicted evaluation scores for each professor in the dataset as well as the residuals for each observation.</p>
 <p>We use the <code>augment()</code> function for this:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">m_bty_aug &lt;-<span class="st"> </span><span class="kw">augment</span>(m_bty)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>m_bty_aug &lt;-<span class="st"> </span><span class="kw">augment</span>(m_bty)</span></code></pre></div>
 <p>Let’s take a look at what’s in this augmented dataset:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">names</span>(m_bty_aug)</a></code></pre></div>
-<pre><code>## [1] &quot;score&quot;      &quot;bty_avg&quot;    &quot;.fitted&quot;    &quot;.se.fit&quot;    &quot;.resid&quot;    
-## [6] &quot;.hat&quot;       &quot;.sigma&quot;     &quot;.cooksd&quot;    &quot;.std.resid&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">names</span>(m_bty_aug)</span></code></pre></div>
+<pre><code>## [1] &quot;score&quot;      &quot;bty_avg&quot;    &quot;.fitted&quot;    &quot;.resid&quot;     &quot;.std.resid&quot;
+## [6] &quot;.hat&quot;       &quot;.sigma&quot;     &quot;.cooksd&quot;</code></pre>
 <p>First, we have the variables used to build the model: <code>score</code> and <code>bty_avg</code>. We also have the predicted values (<code>.fitted</code>) and the residuals (<code>.resid</code>). We’ll talk about a few of the other variables later in the course, and some others you will encounter in future courses.</p>
 <p><label for="tufte-mn-6" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-6" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Hint:</strong> You can use <code>geom_hline()</code> with <code>linetype = “dashed”</code> for this.</span></span></p>
+</div>
+</div>
+<div id="warm-up" class="section level1">
+<h1>Warm-up</h1>
+<p>Recall that you were asked to write a linear model for predicting average professor evaluation score based on average beauty rating (bty_avg) only and analyze it. Before we get to work let’s quickly go through that task.</p>
+<div id="discuss" class="section level2">
+<h2>Discuss!</h2>
+<ul>
+<li>How did you interpret the <span class="math inline">\(R^2\)</span> of the model.</li>
+<li>Is it correct that the profit is 70% of the model? Explain your answer.</li>
+<li>Which function did you use to obtain the slope and intercept estimates from the tidy model output?</li>
+<li>Which function did you use to obtain the <span class="math inline">\(R^2\)</span>?</li>
+</ul>
+</div>
+</div>
+<div id="workshop-exercises" class="section level1">
+<h1>Workshop exercises</h1>
 <ol start="3" style="list-style-type: decimal">
 <li>Make a residuals vs. predicted values plot for the model above. Use <code>geom_jitter()</code> instead of <code>geom_point()</code>, and overlay a dashed horizontal line at <code>y = 0</code>. Then, comment on whether the linear model is appropriate for modeling the relationship between evaluation scores and beauty scores.</li>
 </ol>
-</div>
-<div id="part-3-multiple-linear-regression" class="section level1">
-<h1>Part 3: Multiple linear regression</h1>
+<div id="multiple-linear-regression" class="section level2">
+<h2>Multiple linear regression</h2>
 <p>Next, we fit a multiple linear regression model, predicting average professor evaluation <code>score</code> based on average beauty rating (<code>bty_avg</code>) and <code>gender</code>:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">m_bty_gen &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>bty_avg <span class="op">+</span><span class="st"> </span>gender, <span class="dt">data =</span> evals)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>m_bty_gen &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>bty_avg <span class="op">+</span><span class="st"> </span>gender, <span class="dt">data =</span> evals)</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Write the linear model.</p></li>
 <li><p>Interpret the intercept and the slopes of <code>bty_avg</code> and <code>gender</code>. Use inline code in your answer.</p></li>
@@ -596,6 +635,13 @@ text-align: center;
 <li><p>What is the definition of adjusted <span class="math inline">\(R^2\)</span>? Explain how it is different than <span class="math inline">\(R^2\)</span> using values from this model. Once again, use inline code in your answer.</p></li>
 <li><p>How do the adjusted <span class="math inline">\(R^2\)</span> values of <code>m_bty_gen</code> and <code>m_bty</code> compare? What does this tell us about how useful <code>gender</code> is in explaining the variability in evaluation scores when we already have information on the beauty score of the professor. Once again, use inline code in your answer.</p></li>
 <li><p>Compare the slopes of <code>bty_avg</code> under the two models (<code>m_bty</code> and <code>m_bty_gen</code>). Has the addition of <code>gender</code> to the model changed the parameter estimate (slope) for <code>bty_avg</code>?</p></li>
+</ol>
+</div>
+</div>
+<div id="wrapping-up" class="section level1">
+<h1>Wrapping up</h1>
+<p>This is to finish up the workshop. Depending on the time you may need to do this after the workshop ended.</p>
+<ol start="13" style="list-style-type: decimal">
 <li><p>Create a new model called <code>m_bty_gen_rank</code> predicting average professor evaluation <code>score</code> based on average beauty rating (<code>bty_avg</code>), <code>gender</code>, and <code>rank</code>.<br />
 Write the linear model and interpret the slopes and intercept in context of the data. Once again, use inline code in your answer.</p></li>
 <li><p>How do the adjusted <span class="math inline">\(R^2\)</span> values of <code>m_bty_gen_rank</code> and <code>m_bty_gen</code> compare? What does this tell us about how useful <code>rank</code> is in explaining the variability in evaluation scores when we already have information on the beauty score and gender of the professor. And yet again, use inline code in your answer.</p></li>
