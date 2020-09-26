@@ -1,5 +1,5 @@
 ---
-title: "Lab 00 - Hello R!"
+title: "Lab 00 - Hello IDS!"
 output: 
   tufte::tufte_html:
     css: ../lab.css
