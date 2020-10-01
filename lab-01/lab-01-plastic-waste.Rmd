@@ -33,7 +33,13 @@ Complete the following steps before you join the live workshop!
 **IMPORTANT:** If there is no GitHub repo created for you for this assignment, it means I didn't have your GitHub username as of when I assigned the homework. Please let me know your GitHub username asap, and I can create your repo.
 ```
 
-Go to the course [GitHub organization](https://github.com/ids-s1-20) and locate your Lab 01 repo, which should be named `lab-01-plastic-waste-YOUR_GITHUB_USERNAME`. Grab the URL of the repo, and clone it in RStudio. Refer to [HW 00](https://ids-s1-20.github.io/homework/hw-00/hw-00-pet-names.html) if you would like to see step-by-step instructions for cloning a repo into an RStudio project.
+Go to the course [GitHub organization](https://github.com/ids-s1-20) and locate your Lab 01 repo, which should be named `lab-01-plastic-waste-YOUR_GITHUB_USERNAME`. If you're in the right place, it should look like the following.
+
+```{r echo=FALSE, eval=TRUE}
+knitr::include_graphics("img/repo-begin.png")
+```
+
+Grab the URL of the repo, and clone it in RStudio. Refer to [HW 00](https://ids-s1-20.github.io/homework/hw-00/hw-00-pet-names.html) if you would like to see step-by-step instructions for cloning a repo into an RStudio project.
 
 First, open the R Markdown document `lab-01.Rmd` and Knit it. Make sure it compiles without errors. The output will be in the file markdown `.md` file with the same name.
 
@@ -216,3 +222,9 @@ plastic_waste %>%
 ```
 
 `r emo::ji("white_check_mark")` `r emo::ji("arrow_up")` *Commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
+
+Once you're done, check to make sure your latest changes are on GitHub and that you have a green indicator for the automated check for your R Markdown document knitting.
+
+```{r echo=FALSE, eval=TRUE}
+knitr::include_graphics("img/repo-end.png")
+```
