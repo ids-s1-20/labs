@@ -19,6 +19,65 @@
   --pink-faint: #E9AFA350;
 }
 
+/* Custom boxes */
+
+.home {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: var(--green-faint) 5px center/3em no-repeat;
+  border-top: 3px solid var(--green);    /* openintro::COL[1,1] */ 
+  border-bottom: 3px solid var(--green); /* openintro::COL[1,1] */ 
+  background-image: url("icons/home.png");
+  background-position: 0.5em 1.5em;
+}
+
+.home:before {
+  content: "Prepare on your own";
+  clear: right;
+  display: block;
+  font-weight: bold;
+  font-variant: small-caps;
+  color: #ad8f95;
+}
+
+.video {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: var(--green-faint) 5px center/3em no-repeat;
+  border-top: 3px solid var(--green);    /* openintro::COL[1,1] */ 
+  border-bottom: 3px solid var(--green); /* openintro::COL[1,1] */ 
+  background-image: url("icons/video.png");
+  background-position: 0.5em 1.5em;
+}
+
+.video:before {
+  content: "Live workshop starts here!";
+  clear: right;
+  display: block;
+  font-weight: bold;
+  font-variant: small-caps;
+  color: #ad8f95;
+}
+
+.marker {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: var(--green-faint) 5px center/3em no-repeat;
+  border-top: 3px solid var(--green);    /* openintro::COL[1,1] */ 
+  border-bottom: 3px solid var(--green); /* openintro::COL[1,1] */ 
+  background-image: url("icons/marker.png");
+  background-position: 0.5em 1.5em;
+}
+
+.marker:before {
+  content: "Well done!";
+  clear: right;
+  display: block;
+  font-weight: bold;
+  font-variant: small-caps;
+  color: #ad8f95;
+}
+
 /* Tufte CSS styles */
 
 body {
