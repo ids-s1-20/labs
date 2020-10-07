@@ -30,8 +30,8 @@ Complete the following steps before you join the live workshop!
 You have **two** tasks you should complete before the workshop.
 It is crucial you do these before the workshop to ensure a smooth (and enjoyable!) experience during the workshop:
 
-1.  **Confirm GitHub org membership:** Confirm that you are a member of the course [GitHub organization](https://github.com/ids-s1-20). If not, let me know **asap**, before the night before the workshop.
-2.  **Meet your teammates:** You can find your team assignment for the rest of the semester [here](https://github.com/ids-s1-20/teams/blob/main/ids20-teams.csv). We're also setting up a channel for your team on, well, Teams! Say hi to everyone there before the workshop.
+-   **Confirm GitHub org membership:** Confirm that you are a member of the course [GitHub organization](https://github.com/ids-s1-20). If not, let me know **asap**, before the night before the workshop.
+-   **Meet your teammates:** You can find your team assignment for the rest of the semester [here](https://github.com/ids-s1-20/teams/blob/main/ids20-teams.csv). We're also setting up a channel for your team on, well, Teams! Say hi to everyone there before the workshop. And don't forget to let your tutor know your team name!
 
 ::: {.video}
 Complete the following steps during the live workshop with your team.
@@ -43,7 +43,7 @@ This is (likely) the first time you're getting to meet your teammates "in person
 Take 5 minutes to go around and introduce yourselves: name, year, program, where you're joining from, whatever else you like.
 Cap off your self introduction by pointing out one error in the following visual.
 
-```{r echo=FALSE, fig.fullwidth=TRUE}
+```{r echo=FALSE}
 knitr::include_graphics("img/Speaking-the-world.jpg")
 ```
 
@@ -170,18 +170,16 @@ staff_long %>%
 
 ------------------------------------------------------------------------
 
-**TEAM MEMBER 5 should now share their screen and pull ⬇️ before doing anything else. They should then write the answers to Exercise 6, and then commit and and push their changes. Everyone else: participate, help out, but no typing in the R Markdown document and no committing/pushing! (If your team has fewer than 5 people, just move back to the first member.)**
+**TEAM MEMBER 5 should now share their screen and pull ⬇️ before doing anything else. They should then write the answers to Exercise 7 and 8, and then commit and and push their changes. Everyone else: participate, help out, but no typing in the R Markdown document and no committing/pushing! (If your team has fewer than 5 people, just move back to the first member.)**
 
 7.  Suppose the objective of this plot was to show that the proportion of part-time faculty have gone up over time compared to other instructional staff types. What changes would you propose making to this plot to tell this story? Write down your idea(s). The more precise you are, the easier the next step will be. Get creative, and think about how you can modify the dataset to give you new/different variables to work with.
 8.  Implement at least one of these ideas you came up with in the previous exercise. You should produce an improved data visualisation and accompany your visualisation with a brief paragraph describing the choices you made in your improvement, specifically discussing what you didn't like in the original plot and why, and how you addressed them in the visualisation you created.
 
 🧶 ✅ ⬆️ **At this point TEAM MEMBER 5 should knit the Rmd, commit, and push their changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.**
 
-<div>
-
+::: {.marker}
 Aim to make it to this point during the workshop.
-
-</div>
+:::
 
 # Wrapping up
 
