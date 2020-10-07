@@ -193,7 +193,7 @@ Also, make sure all of your R chunks are properly labelled and your figures are 
 Once the last person pushes their final changes, others should pull the changes and knit the R Markdown document to confirm that they can reproduce the report.
 
 **NOTE:** The final figure you made in Exercise 8 is all you need to participate in the second (and last) virtual exchange with the University of Florida students.
-Read more about what you need to do to participate here.
+Read more about what you need to do to participate [here](https://www.introds.org/extra-credit/extra-credit-02.html).
 
 ## More sad plots
 
