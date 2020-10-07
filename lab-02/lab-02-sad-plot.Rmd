@@ -1,0 +1,206 @@
+---
+title: "Lab 02 - Take a sad plot and make it better"
+output: 
+  tufte::tufte_html:
+    css: ../lab.css
+    tufte_variant: "envisioned"
+    highlight: pygments
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+```
+
+In this lab your task is to improve a plot that violates many data visualization best practices.
+We want you to get creative and make a visualisation that tells a (much!) better story than the original plot.
+
+# Learning goals
+
+-   Telling a story with data.
+-   Data visualization best practices.
+-   Reshaping data.
+
+::: {.home}
+Complete the following steps before you join the live workshop!
+:::
+
+# Workshop prep
+
+You have **two** tasks you should complete before the workshop.
+It is crucial you do these before the workshop to ensure a smooth (and enjoyable!) experience during the workshop:
+
+1.  **Confirm GitHub org membership:** Confirm that you are a member of the course [GitHub organization](https://github.com/ids-s1-20). If not, let me know **asap**, before the night before the workshop.
+2.  **Meet your teammates:** You can find your team assignment for the rest of the semester [here](https://github.com/ids-s1-20/teams/blob/main/ids20-teams.csv). We're also setting up a channel for your team on, well, Teams! Say hi to everyone there before the workshop.
+
+::: {.video}
+Complete the following steps during the live workshop with your team.
+:::
+
+# Warm up with your team
+
+This is (likely) the first time you're getting to meet your teammates "in person".
+Take 5 minutes to go around and introduce yourselves: name, year, program, where you're joining from, whatever else you like.
+Cap off your self introduction by pointing out one error in the following visual.
+
+```{r echo=FALSE, fig.fullwidth=TRUE}
+knitr::include_graphics("img/Speaking-the-world.jpg")
+```
+
+Once the introductions are over, give a number to each team member.
+In this lab, team members will take turns sharing their screen and working on an exercise in the common team repo, commit and push their changes, and then the next team member will take over and **pull** the changes before they make any further changes to their lab.
+In the lab instructions you'll see markers for
+
+-   **EVERYONE** (for tasks everyone should do concurrently) or
+-   **TEAM MEMBER X** (for tasks only team member X should do while sharing their screen and others contributing verbally but not typing anything).
+
+# Getting started
+
+## Repository
+
+**EVERYONE:** Go to course [GitHub organization](https://github.com/ids-s1-20) and locate your Lab 02 repo, which should be named `lab-02-sad-plot-YOUR_TEAMNAME`.
+Grab the URL of the repo, and clone it in RStudio Cloud.
+Refer to [HW 00](https://ids-s1-20.github.io/homework/hw-00/hw-00-pet-names.html) if you would like to see step-by-step instructions for cloning a repo into an RStudio project.
+
+First, open the R Markdown document `lab-02.Rmd` and knit it.
+Make sure it compiles without errors.
+The output will be a markdown document (`.md`) file with the same name.
+
+## Packages
+
+**EVERYONE:** Before getting started with the Exercises, run the following code in the Console to load this package.
+
+```{r load-packages, message=FALSE, eval=TRUE}
+library(tidyverse)
+```
+
+## Data: Instructional staff employment trends
+
+The American Association of University Professors (AAUP) is a nonprofit membership association of faculty and other academic professionals.
+[This report](https://www.aaup.org/sites/default/files/files/AAUP_Report_InstrStaff-75-11_apr2013.pdf) compiled by the AAUP shows trends in instructional staff employees between 1975 and 2011, and contains an image very similar to the one given below.
+
+```{r echo=FALSE, fig.fullwidth=TRUE}
+knitr::include_graphics("img/staff-employment.png")
+```
+
+**EVERYONE:** Let's start by loading the data used to create this plot.
+
+```{r load-data-staff, message=FALSE, eval=TRUE}
+staff <- read_csv("data/instructional-staff.csv")
+```
+
+Each row in this dataset represents a faculty type, and the columns are the years for which we have data.
+The values are percentage of hires of that type of faculty for each year.
+
+```{r echo=FALSE}
+staff
+```
+
+In order to recreate this visualization we need to first reshape the data to have one variable for faculty type and one variable for year.
+In other words, we will convert the data from the long format to wide format.
+
+# Exercises
+
+**1️⃣ TEAM MEMBER 1 should share their screen, write the answer to Exercises 1, and then commit and and push their changes. Everyone else: participate, help out, but no typing in the R Markdown document and no committing/pushing!**
+
+1.  If the long data will have a row for each year/faculty type combination, and there are 5 faculty types and 11 years of data, how many rows will the data have? Discuss as a team and write down your answer.
+
+🧶 ✅ ⬆️ **At this point TEAM MEMBER 1 should knit the Rmd, commit, and push their changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.**
+
+------------------------------------------------------------------------
+
+**2️⃣ TEAM MEMBER 2 should now share their screen and pull ⬇️ before doing anything else. They should then write the answers to Exercises 2 and 3, and then commit and and push their changes. Everyone else: participate, help out, but no typing in the R Markdown document and no committing/pushing!**
+
+We do the wide to long conversation using `pivot_longer()`.
+The animation below show how this function works, as well as its counterpart `pivot_wider()`.
+
+```{r echo=FALSE}
+knitr::include_graphics("img/tidyr-longer-wider.gif")
+```
+
+Quick reminder: the function has the following arguments:
+
+```{r eval=FALSE}
+pivot_longer(data, cols, names_to = "name")
+```
+
+-   The first argument is `data` as usual.
+-   The second argument, `cols`, specifies the columns to pivot into longer format.
+-   The third argument, `names_to`, is the name of the column where column names of pivoted variables go (character string).
+-   The fourth argument, `values_to` is the name of the column where data in pivoted variables go (character string).
+
+2.  Fill in the blanks in the following code chunk to pivot the staff data longer and save it as a new data frame called `staff_long`.
+
+```{r eval=FALSE}
+staff_long <- ___ %>%
+  ___(
+    cols = ___, 
+    names_to = "___",
+    values_to = "___"
+    )
+```
+
+3.  Inspect `staff_long` to check if your guess regarding number of rows from Exercise 1 was correct.
+
+🧶 ✅ ⬆️ **At this point TEAM MEMBER 2 should knit the Rmd, commit, and push their changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.**
+
+------------------------------------------------------------------------
+
+**TEAM MEMBER 3 should now share their screen and pull ⬇️ before doing anything else. They should then write the answers to Exercises 4 and 5, and then commit and and push their changes. Everyone else: participate, help out, but no typing in the R Markdown document and no committing/pushing!**
+
+4.  We'll plot instructional staff employment trends as a line plot. A possible approach for creating a line plot where we color the lines by faculty type is the following, but it doesn't quite look right. What seems to be the issue?
+
+```{r eval=FALSE}
+staff_long %>%
+  ggplot(aes(x = year, y = value, color = faculty_type)) +
+  geom_line()
+```
+
+5.  Next, add a `group` aesthetic to the plot (grouping by `faculty_type`) and plot again. What does the plot reveal about instructional staff employment trends over the years?
+
+🧶 ✅ ⬆️ **At this point TEAM MEMBER 3 should knit the Rmd, commit, and push their changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.**
+
+------------------------------------------------------------------------
+
+**TEAM MEMBER 4 should now share their screen and pull ⬇️ before doing anything else. They should then write the answers to Exercise 6, and then commit and and push their changes. Everyone else: participate, help out, but no typing in the R Markdown document and no committing/pushing! (If your team has fewer than 4 people, just move back to the first member.)**
+
+6.  Improve the line plot from the previous exercise by fixing up its labels (title, axis labels, and legend label) as well as any other components you think could benefit from improvement.
+
+🧶 ✅ ⬆️ **At this point TEAM MEMBER 4 should knit the Rmd, commit, and push their changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.**
+
+------------------------------------------------------------------------
+
+**TEAM MEMBER 5 should now share their screen and pull ⬇️ before doing anything else. They should then write the answers to Exercise 6, and then commit and and push their changes. Everyone else: participate, help out, but no typing in the R Markdown document and no committing/pushing! (If your team has fewer than 5 people, just move back to the first member.)**
+
+7.  Suppose the objective of this plot was to show that the proportion of part-time faculty have gone up over time compared to other instructional staff types. What changes would you propose making to this plot to tell this story? Write down your idea(s). The more precise you are, the easier the next step will be. Get creative, and think about how you can modify the dataset to give you new/different variables to work with.
+8.  Implement at least one of these ideas you came up with in the previous exercise. You should produce an improved data visualisation and accompany your visualisation with a brief paragraph describing the choices you made in your improvement, specifically discussing what you didn't like in the original plot and why, and how you addressed them in the visualisation you created.
+
+🧶 ✅ ⬆️ **At this point TEAM MEMBER 5 should knit the Rmd, commit, and push their changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.**
+
+<div>
+
+Aim to make it to this point during the workshop.
+
+</div>
+
+# Wrapping up
+
+Go back through your write up to make sure you're following coding style guidelines we discussed in class.
+Make any edits as needed.
+
+Also, make sure all of your R chunks are properly labelled and your figures are reasonably sized.
+
+Once the last person pushes their final changes, others should pull the changes and knit the R Markdown document to confirm that they can reproduce the report.
+
+**NOTE:** The final figure you made in Exercise 8 is all you need to participate in the second (and last) virtual exchange with the University of Florida students.
+Read more about what you need to do to participate here.
+
+## More sad plots
+
+Want to see more sad plots?
+
+-   [Flowing Data - Ugly Charts](https://flowingdata.com/category/visualization/ugly-visualization/)
+-   [Reddit - Data is ugly](https://www.reddit.com/r/dataisugly/)
+-   [Missed Opportunities and Graphical Failures](http://www.datavis.ca/gallery/missed.php)
+-   [(Mostly Bad) Graphics and Tables](http://users.stat.umn.edu/~rend0020/Teaching/STAT8801-resources/graphics/index.html)
+-   [Take a sad plot and make it better](https://apreshill.github.io/ohsu-biodatavis/slides.html#1)
