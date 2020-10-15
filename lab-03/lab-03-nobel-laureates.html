@@ -811,7 +811,7 @@ See also [ggplot2 documentation](https://ggplot2.tidyverse.org/)
 <div id="get-to-know-your-data" class="section level2">
 <h2>Get to know your data</h2>
 <ol style="list-style-type: decimal">
-<li>How many observations and how many variables are in the dataset? Use inline code to answer this question.</li>
+<li>How many observations and how many variables are in the dataset? Use inline code to answer this question. What does each row represent?</li>
 </ol>
 <p>There are some observations in this dataset that we will exclude from our analysis to match the Buzzfeed results.</p>
 <ol start="2" style="list-style-type: decimal">
@@ -822,7 +822,7 @@ See also [ggplot2 documentation](https://ggplot2.tidyverse.org/)
 <li>laureates who are people as opposed to organizations (organizations are denoted with <code>&quot;org&quot;</code> as their <code>gender</code>)</li>
 <li>laureates who are still alive (their <code>died_date</code> is <code>NA</code>)</li>
 </ul>
-<p>Confirm that once you have filtered for these characteristics you are left with a data frame with 228 228 observations.</p>
+<p>Confirm that once you have filtered for these characteristics you are left with a data frame with 228 observations, once again using inline code.</p>
 <p>🧶 ✅ ⬆️ Knit, <em>commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
 </div>
 <div id="most-living-nobel-laureates-were-based-in-the-us-when-they-won-their-prizes" class="section level2">
@@ -839,27 +839,37 @@ See also [ggplot2 documentation](https://ggplot2.tidyverse.org/)
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Physics&quot;</span>, <span class="st">&quot;Medicine&quot;</span>, <span class="st">&quot;Chemistry&quot;</span>, <span class="st">&quot;Economics&quot;</span>))</span></code></pre></div>
 <p>For the next exercise work with the <code>nobel_living_science</code> data frame you created above. This means you’ll need to define this data frame in your R Markdown document, even though the next exercise doesn’t explicitly ask you to do so.</p>
 <ol start="3" style="list-style-type: decimal">
-<li>Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize. Note: Your visualization should be faceted by category. For each facet you should have two bars, one for winners in the US and one for Other. Flip the coordinates so the bars are horizontal, not vertical. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.</li>
-</ol>
-<p>🧶 ✅ ⬆️ Knit, <em>commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
-</div>
-<div id="but-of-those-us-based-nobel-laureates-many-were-born-in-other-countries" class="section level2">
-<h2>But of those US-based Nobel laureates, many were born in other countries</h2>
-<p><label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Hint:</strong> You should be able to <del>cheat</del> borrow from code you used earlier to create the <code>country_us</code> variable.</span></span></p>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Create a new variable called <code>born_country_us</code> that has the value <code>&quot;USA&quot;</code> if the laureate is born in the US, and <code>&quot;Other&quot;</code> otherwise.</p></li>
-<li><p>Add a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not. Your final visualization should contain a facet for each category, within each facet a bar for whether they won the award in the US or not, and within each bar whether they were born in the US or not. Based on your visualization, do the data appear to support Buzzfeed’s claim? Explain your reasoning in 1-2 sentences.</p></li>
+<li><p>Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.</p>
+<ul>
+<li>Your visualization should be faceted by category.</li>
+<li>For each facet you should have two bars, one for winners in the US and one for Other.</li>
+<li>Flip the coordinates so the bars are horizontal, not vertical.</li>
+</ul></li>
 </ol>
 <p>🧶 ✅ ⬆️ Knit, <em>commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
 <div>
 <p>Aim to make it to this point during the workshop.</p>
 </div>
 </div>
+<div id="but-of-those-us-based-nobel-laureates-many-were-born-in-other-countries" class="section level2">
+<h2>But of those US-based Nobel laureates, many were born in other countries</h2>
+<p><label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Hint:</strong> You should be able to <del>cheat</del> borrow from code you used earlier to create the <code>country_us</code> variable.</span></span></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Create a new variable called <code>born_country_us</code> that has the value <code>&quot;USA&quot;</code> if the laureate is born in the US, and <code>&quot;Other&quot;</code> otherwise. How many of the winners are born in the US?</p></li>
+<li><p>Add a second variable to your visualization from Exercise 3 based on whether the laureate was born in the US or not. Based on your visualization, do the data appear to support Buzzfeed’s claim? Explain your reasoning in 1-2 sentences.</p>
+<ul>
+<li>Your final visualization should contain a facet for each category.</li>
+<li>Within each facet, there should be a bar for whether the laureate won the award in the US or not.</li>
+<li>Each bar should have segments for whether the laureate was born in the US or not.</li>
+</ul></li>
+</ol>
+<p>🧶 ✅ ⬆️ Knit, <em>commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
+</div>
 <div id="heres-where-those-immigrant-nobelists-were-born" class="section level2">
 <h2>Here’s where those immigrant Nobelists were born</h2>
 <p><label for="tufte-mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle"><span class="marginnote"><span style="display: block;">Note that your bar plot won’t exactly match the one from the Buzzfeed article. This is likely because the data has been updated since the article was published.</span></span></p>
 <ol start="6" style="list-style-type: decimal">
-<li>In a single pipeline, filter for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the <code>count()</code>) function for their birth country, <code>born_country</code>, and arrange the resulting data frame in descending order of number of observations for each country.</li>
+<li>In a single pipeline, filter for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the <code>count()</code> function) for their birth country (<code>born_country</code>) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?</li>
 </ol>
 <p>🧶 ✅ ⬆️ Knit, <em>commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
 <p>Now go back through your write up to make sure you’ve answered all questions and all of your R chunks are properly labelled. Once you decide as a team that you’re done with this lab, all members of the team should pull the changes and knit the R Markdown document to confirm that they can reproduce the report.</p>
