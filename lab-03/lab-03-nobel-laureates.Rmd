@@ -95,7 +95,7 @@ If you feel like you won't be able to resist the urge to touch your computer whe
 -   Change the team name to your actual team name.
 -   Knit, commit, push.
 
-🛑 Wait for instructions before moving on to the next step.
+🛑 Make sure the previous role has finished before moving on to the next step.
 
 **Role 2:**
 
@@ -107,24 +107,24 @@ If you feel like you won't be able to resist the urge to touch your computer whe
 -   **Click the Stage checkbox** for all files in your Git tab. Make sure they all have check marks, not filled-in boxes.
 -   Commit and push.
 
-🛑 Wait for instructions before moving on to the next step.
+🛑 Make sure the previous role has finished before moving on to the next step.
 
 **Role 3:**
 
--   Add a label to the first code chunk
+-   Change the a label of the first code chunk
 -   Knit, commit, push. You should get an error.
 -   Pull. No merge conflicts should occur, but you should see a message about merging.
 -   Now push.
 
-🛑 Wait for instructions before moving on to the next step.
+🛑 Make sure the previous role has finished before moving on to the next step.
 
 **Role 4:**
 
--   Add a different label to the first code chunk.
+-   Change the label of the first code chunk to something other than previous role did.
 -   Knit, commit, push. You should get an error.
 -   Pull. Take a look at the document with the merge conflict. Clear the merge conflict by choosing the correct/preferred change. Commit, and push.
 
-🛑 Wait for instructions before moving on to the next step.
+🛑 Make sure the previous role has finished before moving on to the next step.
 
 **Everyone:** Pull, and observe the changes in your document.
 
@@ -263,7 +263,8 @@ nobel_living_science <- nobel_living %>%
 For the next exercise work with the `nobel_living_science` data frame you created above.
 This means you'll need to define this data frame in your R Markdown document, even though the next exercise doesn't explicitly ask you to do so.
 
-3.  Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.
+3.  Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the nobel prize.
+    Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.
 
     -   Your visualization should be faceted by category.
     -   For each facet you should have two bars, one for winners in the US and one for Other.
@@ -314,3 +315,13 @@ Once you decide as a team that you're done with this lab, all members of the tea
 The plots in the Buzzfeed article are called waffle plots.
 You can find the code used for making these plots in Buzzfeed's GitHub repo (yes, they have one!) [here](https://buzzfeednews.github.io/2017-01-immigration-and-science/).
 You're not expected to recreate them as part of your assignment, but you're welcomed to do so for fun!
+
+# Using your lab template
+
+In your lab template this week (and going forward) you'll see markers that indicate exercise numbers as well as narrative and code portions.
+Please don't remove or alter these markers as they are used for automarking your work.
+If you remove or alter them, your work might not be marked properly.
+
+```{r echo=FALSE}
+knitr::include_graphics("img/markers.png")
+```
