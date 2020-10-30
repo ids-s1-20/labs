@@ -272,11 +272,9 @@ This means you'll need to define this data frame in your R Markdown document, ev
 
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
-<div>
-
+::: {.marker}
 Aim to make it to this point during the workshop.
-
-</div>
+:::
 
 ## But of those US-based Nobel laureates, many were born in other countries
 
