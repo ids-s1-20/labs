@@ -1,5 +1,5 @@
 ---
-title: "Lab 06 - University of Edinburgh Art Collection"
+title: "Lab 04 - University of Edinburgh Art Collection"
 output: 
   tufte::tufte_html:
     css: ../lab.css
