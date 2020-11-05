@@ -1,0 +1,79 @@
+---
+title: "Lab 05 - Conveying the right message through visualisation"
+output: 
+  tufte::tufte_html:
+    css: ../lab.css
+    tufte_variant: "envisioned"
+    highlight: pygments
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+library(rvest)
+library(tidyverse)
+```
+
+::: {.home}
+Complete the following steps before you join the live workshop!
+:::
+
+## Workshop prep
+
+You have two tasks you should complete before the workshop:
+
+- Watch [this week's videos](https://www.introds.org/post/07-week/), especially the one on misrepresentation of data and results.
+- Take a look at the data visualisation below (and the associated Tweet) and think about what is misleading about the visualisation and how you might go about fixing it. Take notes and bring your notes to the workshop to share with your teammates.
+
+## Part 1 - Masks and COVID
+
+The following visualisation was shared [on Twitter](https://twitter.com/JonBoeckenstedt/status/1291602888376999936) as "extraordinary misleading". 
+
+```{r fig.fullwidth=TRUE, echo=FALSE}
+knitr::include_graphics("img/masks-v-nomasks.png")
+```
+
+Before you join the workshop, think about what is misleading about this visualisation and how you might go about fixing it. Take some notes and bring your notes to the workshop to share with your teammates.
+
+::: {.video}
+Complete the following steps during the live workshop with your team.
+:::
+
+1. Create a data frame that can be used to re-construct this visualisation. You can use the `tribble()` function for this. For example, if you wanted to construct the following data frame
+
+```{r tribble, echo=FALSE}
+df <- tribble(
+  ~date, ~count,
+  "1/1/2020", 15,
+  "2/1/2020", 20,
+  "3/1/2020", 22,
+)
+```
+
+```{r}
+df
+```
+
+you can write
+
+```{r ref.label="tribble", eval = FALSE}
+```
+
+```{marginfigure}
+Since the exercises for this week are short it's possible not every team member will get to commit and push **during** the workshop. However each team member should review what was created, fix typos, make edits for better presentation, etc. either during or after the workshop, and before the deadline.
+```
+
+2. Make a visualisation that more accurately (and honestly) tells the story. 
+
+🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
+
+::: {.marker}
+Aim to make it to this point during the workshop.
+:::
+
+## Part 2 - Work on projects
+
+Once you're done with this week's lab, take a moment to go through the issues posted for your project proposal. Either work on your project re-proposal, or should you decide not to do that, work on making a plan to address these issues to make progress on your project.
+
+
+
