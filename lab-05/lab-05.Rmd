@@ -65,6 +65,8 @@ Since the exercises for this week are short it's possible not every team member 
 
 2. Make a visualisation that more accurately (and honestly) tells the story. 
 
+3. What message does the better visualisation you created tell about mask wearing and COVID?
+
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 ::: {.marker}
