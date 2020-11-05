@@ -39,7 +39,7 @@ Before you join the workshop, think about what is misleading about this visualis
 Complete the following steps during the live workshop with your team.
 :::
 
-1. Create a data frame that can be used to re-construct this visualisation. You may need to guess some of the numbers, that's ok. You can use the `tribble()` function for this. For example, if you wanted to construct the following data frame
+1. Create a data frame that can be used to re-construct this visualisation. You may need to guess some of the numbers, that's ok. You should first think about how many rows and columns you'll need and what you want to call your variables. Then, you can use the `tribble()` function for this. For example, if you wanted to construct the following data frame
 
 ```{r tribble, echo=FALSE}
 df <- tribble(
@@ -65,7 +65,9 @@ Since the exercises for this week are short it's possible not every team member 
 
 2. Make a visualisation that more accurately (and honestly) tells the story. 
 
-3. What message does the better visualisation you created tell about mask wearing and COVID?
+3. What message is more clear in your visualisation than it was in the original visualisation?
+
+4. What, if any, useful information do these data and your visualisation tell us about mask wearing and COVID? It'll be difficult to set aside what you already know about mask wearing, but you should try to focus only on what this visualisation tells. Feel free to also comment on whether that lines up with what you know about mask wearing.
 
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
