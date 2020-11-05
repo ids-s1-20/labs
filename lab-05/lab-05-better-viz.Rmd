@@ -39,7 +39,7 @@ Before you join the workshop, think about what is misleading about this visualis
 Complete the following steps during the live workshop with your team.
 :::
 
-1. Create a data frame that can be used to re-construct this visualisation. You can use the `tribble()` function for this. For example, if you wanted to construct the following data frame
+1. Create a data frame that can be used to re-construct this visualisation. You may need to guess some of the numbers, that's ok. You can use the `tribble()` function for this. For example, if you wanted to construct the following data frame
 
 ```{r tribble, echo=FALSE}
 df <- tribble(
