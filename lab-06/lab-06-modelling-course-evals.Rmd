@@ -74,7 +74,7 @@ Complete the following steps during the live workshop with your team.
 **Hint:** Linear model is in the form $\hat{y} = b_0 + b_1 x$.
 ```
 
-3.  Fit a linear model called `score_bty` to predict average professor evaluation `score` from average beauty rating (`bty_avg`). Print the regression output using `tidy()`. Based on the regression output, write the linear model.
+3.  Fit a linear model called `score_bty_fit` to predict average professor evaluation `score` from average beauty rating (`bty_avg`). Print the regression output using `tidy()`. Based on the regression output, write the linear model.
 4.  Replot your jittered visualization from Exercise 3, and add the regression line to this plot in `"orange"` color. Turn off the shading for the uncertainty of the line.
 5.  Interpret the slope of the linear model in context of the data.
 6.  Interpret the intercept of the linear model in context of the data. Comment on whether or not the intercept makes sense in this context.
