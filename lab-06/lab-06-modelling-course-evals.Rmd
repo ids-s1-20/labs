@@ -113,8 +113,8 @@ We'll talk about a few of the other variables in the augmented data frame later 
 
 # Part 3: Linear regression with a categorical predictor
 
-9.  Fit a new linear model called `score_rank` to predict average professor evaluation `score` based on `rank` of the professor and print out the regression output using `tidy()`. Based on the regression output, interpret the slope and intercept in context of the data.
-10. Fit a new linear model called `score_gender` to predict average professor evaluation `score` based on `gender` of the professor. and print out the regression output using `tidy()`. Based on the regression output, interpret the slope and intercept in context of the data. But we'll do things a bit differently this time, using inline code for the values of the intercept and the slope! Below are some tips for extracting these values from the model output to use in your inline code.
+9.  Fit a new linear model called `score_rank_fit` to predict average professor evaluation `score` based on `rank` of the professor and print out the regression output using `tidy()`. Based on the regression output, interpret the slope and intercept in context of the data.
+10. Fit a new linear model called `score_gender_fit` to predict average professor evaluation `score` based on `gender` of the professor. and print out the regression output using `tidy()`. Based on the regression output, interpret the slope and intercept in context of the data. But we'll do things a bit differently this time, using inline code for the values of the intercept and the slope! Below are some tips for extracting these values from the model output to use in your inline code.
 
 Let's start with the intercept.
 You have two options for extracting the value of the intercept from the regression output.
