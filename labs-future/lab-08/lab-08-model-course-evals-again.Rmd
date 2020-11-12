@@ -21,19 +21,15 @@ knitr::opts_chunk$set(eval = TRUE)
 + Comparing models using adjusted $R^2$.
 ```
 
-This week we revisit the professor evaluations data we modeled in the previous 
-lab. In the last lab we modeled evaluation scores using a single predictor at a 
-time. However this time we use multiple predictors to model evaluation scores.
+This week we revisit the professor evaluations data we modeled in the previous lab.
+In the last lab we modeled evaluation scores using a single predictor at a time.
+However this time we use multiple predictors to model evaluation scores.
 
-If you don't remember the data, review the [previous lab](/labs/lab-07/lab-07-model-course-evals.html) 
-before continuing to the exercises.
+If you don't remember the data, review the [previous lab](/labs/lab-07/lab-07-model-course-evals.html) before continuing to the exercises.
 
-As before, we will start with a data prep step where we calculate average 
-beauty scores for each professor. Then we'll fit a simple linear regression 
-model predicting evaluation score from beauty score. And then for the majority 
-of the workshop we will work on fitting, interpreting, and evaluating the fit 
-of various multiple regression models predicting evaluation scores from 
-beauty score along with other variables like gender and rank of the professor.
+As before, we will start with a data prep step where we calculate average beauty scores for each professor.
+Then we'll fit a simple linear regression model predicting evaluation score from beauty score.
+And then for the majority of the workshop we will work on fitting, interpreting, and evaluating the fit of various multiple regression models predicting evaluation scores from beauty score along with other variables like gender and rank of the professor.
 
 # Prepare at home
 
@@ -43,25 +39,22 @@ beauty score along with other variables like gender and rank of the professor.
 You can find your team assignment for the rest of the semester [here](https://github.com/ids-s1-19/team-assignments/blob/master/roster-team.csv).
 ```
 
-Go to the course [GitHub organization](https://github.com/ids-s1-19) and locate 
-your Lab 08 repo, which should be named `lab-08-model-course-evals-again-YOUR_TEAMNAME`. 
+Go to the course [GitHub organization](https://github.com/ids-s1-19) and locate your Lab 08 repo, which should be named `lab-08-model-course-evals-again-YOUR_TEAMNAME`.
 Grab the URL of the repo, and clone it in RStudio Cloud.
 
 ## Introduce yourself to Git
 
 ```{marginfigure}
-Your email address is the address tied to your GitHub account and your name 
-should be first and last name.
+Your email address is the address tied to your GitHub account and your name should be first and last name.
 ```
 
-Run the following (but update it for your name and email!) in the Console to 
-configure Git:
+Run the following (but update it for your name and email!) in the Console to configure Git:
 
 ```{r git-config, eval=FALSE}
 library(usethis)
 use_git_config(user.name = "Your Name", 
                user.email = "your.email@address.com")
-``` 
+```
 
 ## Load packages
 
@@ -71,18 +64,17 @@ We will use the following packages in this analysis:
 library(tidyverse)
 library(broom)
 ```
-  
+
 ## Download the data
 
-In this lab you will first download the data, then upload it to the `data/` folder 
-in your RStudio Cloud project.
+In this lab you will first download the data, then upload it to the `data/` folder in your RStudio Cloud project.
 
 ```{r data-upload, fig.margin = TRUE, echo = FALSE, eval=TRUE, fig.width=3}
 knitr::include_graphics("img/data-upload.png")
 ```
 
-- Click [here](https://introds.org/data/evals-mod.csv) to download the data. The file is called `evals-mod.csv`.
-- Navigate to the data folder in your project and upload the `evals-mod.csv` file.
+-   Click [here](https://introds.org/data/evals-mod.csv) to download the data. The file is called `evals-mod.csv`.
+-   Navigate to the data folder in your project and upload the `evals-mod.csv` file.
 
 Then, you can load the data as usual using the following.
 
@@ -90,53 +82,41 @@ Then, you can load the data as usual using the following.
 evals <- read_csv("data/evals-mod.csv")
 ```
 
-## Data Manipulation 
+## Data Manipulation
 
-1.  Create a new variable called `bty_avg` that is the average attractiveness
-    score of the six students for each professor (`bty_f1lower` through 
-    `bty_m2upper`). Add this new variable to the `evals` data frame. Do this in 
-    one pipe, using the `rowMeans()` function within a `mutate()`.
+1.  Create a new variable called `bty_avg` that is the average attractiveness score of the six students for each professor (`bty_f1lower` through `bty_m2upper`). Add this new variable to the `evals` data frame. Do this in one pipe, using the `rowMeans()` function within a `mutate()`.
 
 ```{r}
 evals <- evals %>% 
   mutate(bty_avg = rowMeans(select(., bty_f1lower:bty_m2upper)))
 ```
 
-If you have questions about what is happening in the code above, refer to 
-[last week's lab](/labs/lab-07/lab-07-model-course-evals.html).
+If you have questions about what is happening in the code above, refer to [last week's lab](/labs/lab-07/lab-07-model-course-evals.html).
 
 ## Simple linear regression
 
-We start with a linear model for predicting average professor evaluation `score` 
-based on average beauty rating (`bty_avg`) only.
+We start with a linear model for predicting average professor evaluation `score` based on average beauty rating (`bty_avg`) only.
 
 ```{r include=FALSE}
 m_bty <- lm(score ~ bty_avg, data = evals)
 ```
 
 ```{marginfigure}
-**Remember:** The linear model is of the form $\hat{y} = b_0 + b_1 * x$, but you should 
-replace $y$ and $x$ with the actual variables and $b_0$ and $b_1$ with the 
-model estimates. Unfortunately math text doesn't work well in GitHub documents, 
-so instead of $\hat{y}$, you can type out y-hat.
+**Remember:** The linear model is of the form $\hat{y} = b_0 + b_1 * x$, but you should replace $y$ and $x$ with the actual variables and $b_0$ and $b_1$ with the model estimates. Unfortunately math text doesn't work well in GitHub documents, so instead of $\hat{y}$, you can type out y-hat.
 ```
 
-2. Write the linear model, interpret the slope, the intercept, and the $R^2$ of 
-   the model. Use `tidy()` to obtain the slope and intercept estimates from the 
-   tidy model output, and `glance()` to obtain the $R^2$. Your answer should use 
-   inline code. Below are some tips for extracting these values from the model 
-   output to use in your inline code.
+2.  Write the linear model, interpret the slope, the intercept, and the $R^2$ of the model. Use `tidy()` to obtain the slope and intercept estimates from the tidy model output, and `glance()` to obtain the $R^2$. Your answer should use inline code. Below are some tips for extracting these values from the model output to use in your inline code.
 
-Let's start with the intercept. You have two options for extracting the value of 
-the intercept from the regression output. Remember, the output looks like 
-this:
+Let's start with the intercept.
+You have two options for extracting the value of the intercept from the regression output.
+Remember, the output looks like this:
 
 ```{r}
 tidy(m_bty)
 ```
 
 So the intercept is in the `estimate` column, and it's the first element in there.
-   
+
 ```{r}
 # Option 1
 tidy(m_bty)$estimate[1]
@@ -152,8 +132,7 @@ tidy(m_bty) %>%
   pull()                              # pull value out of data frame
 ```
 
-Regardless of which option you use, you might consider storing the value in an 
-object that you can easily refer to in your inline code, e.g.
+Regardless of which option you use, you might consider storing the value in an object that you can easily refer to in your inline code, e.g.
 
 ```{marginfigure}
 You can hide the code for chunks like this where you are simply preparing 
@@ -171,39 +150,26 @@ m_bty_intercept <- tidy(m_bty) %>%
 
 And then, you can use the `m_bty_intercept` in inline code, e.g.
 
-```
-The intercept of the model is 'r m_bty_intercept'...
-```
+    The intercept of the model is 'r m_bty_intercept'...
 
 which will render to
 
+    The intercept of the model is `r m_bty_intercept`...
 
-```
-The intercept of the model is `r m_bty_intercept`...
-```
+There is still one small issue here though, the number of decimal places reported.
+It would be better to round the value in our narrative, for which we can use the `round()` function.
+This function takes two arguments: the first one is the value (or vector of values) you want to round, and the second one is the number of digits.
 
-There is still one small issue here though, the number of decimal places reported. 
-It would be better to round the value in our narrative, for which we can 
-use the `round()` function. This function takes two arguments: the first one 
-is the value (or vector of values) you want to round, and the second one is 
-the number of digits.
-
-```
-The intercept of the model is 'r round(m_bty_intercept, 2)'...
-```
+    The intercept of the model is 'r round(m_bty_intercept, 2)'...
 
 which will render to
 
-
-```
-The intercept of the model is `r round(m_bty_intercept, 2)`...
-```
+    The intercept of the model is `r round(m_bty_intercept, 2)`...
 
 <br>
 
-We should also use a graphical diagnostic, the residuals plot, to assess model 
-fit. To do so we need to calculate the predicted evaluation scores for each 
-professor in the dataset as well as the residuals for each observation. 
+We should also use a graphical diagnostic, the residuals plot, to assess model fit.
+To do so we need to calculate the predicted evaluation scores for each professor in the dataset as well as the residuals for each observation.
 
 We use the `augment()` function for this:
 
@@ -217,10 +183,9 @@ Let's take a look at what's in this augmented dataset:
 names(m_bty_aug)
 ```
 
-First, we have the variables used to build the model: `score` and `bty_avg`. 
+First, we have the variables used to build the model: `score` and `bty_avg`.
 We also have the predicted values (`.fitted`) and the residuals (`.resid`).
-We'll talk about a few of the other variables later in the course, and some 
-others you will encounter in future courses.
+We'll talk about a few of the other variables later in the course, and some others you will encounter in future courses.
 
 ```{marginfigure}
 **Hint:** You can use `geom_hline()` with `linetype = "dashed"` for this.
@@ -228,75 +193,62 @@ others you will encounter in future courses.
 
 # Warm-up
 
-Recall that you were asked to write a linear model for predicting average professor evaluation score based on average beauty rating (bty_avg) only and analyze it. Before we get to work let's quickly go through that task.  
+Recall that you were asked to write a linear model for predicting average professor evaluation score based on average beauty rating (bty_avg) only and analyze it.
+Before we get to work let's quickly go through that task.
 
 ## Discuss!
 
-- How did you interpret the $R^2$ of 
-   the model. 
-- Is it correct that the profit is 70% of the model? Explain your answer. 
-- Which function did you use to obtain the slope and intercept estimates from the 
-   tidy model output?
-- Which function did you use to obtain the $R^2$?
+-   How did you interpret the $R^2$ of the model.
+-   Is it correct that the profit is 70% of the model? Explain your answer.
+-   Which function did you use to obtain the slope and intercept estimates from the tidy model output?
+-   Which function did you use to obtain the $R^2$?
 
 # Workshop exercises
- 
- 
-3. Make a residuals vs. predicted values plot for the model above. Use 
-   `geom_jitter()` instead of `geom_point()`, and overlay a dashed horizontal 
-   line at `y = 0`. Then, comment on whether the linear model is appropriate for 
-   modeling the relationship between evaluation scores and beauty scores.
 
-
+3.  Make a residuals vs. predicted values plot for the model above. Use `geom_jitter()` instead of `geom_point()`, and overlay a dashed horizontal line at `y = 0`. Then, comment on whether the linear model is appropriate for modeling the relationship between evaluation scores and beauty scores.
 
 ## Multiple linear regression
 
-Next, we fit a multiple linear regression model, predicting average professor 
-evaluation `score` based on average beauty rating (`bty_avg`) and `gender`:
+Next, we fit a multiple linear regression model, predicting average professor evaluation `score` based on average beauty rating (`bty_avg`) and `gender`:
 
 ```{r}
 m_bty_gen <- lm(score ~ bty_avg + gender, data = evals)
 ```
 
-4. Write the linear model.
-   
-5. Interpret the intercept and the slopes of `bty_avg` and `gender`. Use inline 
-   code in your answer.
+4.  Write the linear model.
 
-6. What percent of the variability in `score` is explained by the model `m_bty_gen`. 
-   Once again, use inline code in your answer.
+5.  Interpret the intercept and the slopes of `bty_avg` and `gender`.
+    Use inline code in your answer.
 
-7. What is the equation of the line corresponding to *just* male professors?
-    
-8. For two professors who received the same beauty rating, which gender tends 
-   to have the higher course evaluation score?
-    
-9. How does the relationship between beauty and evaluation score
-   vary between male and female professors?
-   
-10. What is the definition of adjusted  $R^2$? Explain how it is different than 
-    $R^2$ using values from this model. Once again, use inline code in your answer.
-    
-11. How do the adjusted $R^2$ values of `m_bty_gen` and `m_bty` compare? What 
-    does this tell us about how useful `gender` is in explaining the variability 
-    in evaluation scores when we already have information on the beauty score of 
-    the professor. Once again, use inline code in your answer.
+6.  What percent of the variability in `score` is explained by the model `m_bty_gen`.
+    Once again, use inline code in your answer.
 
-12. Compare the slopes of `bty_avg` under the two models (`m_bty` and `m_bty_gen`). Has the 
-    addition of `gender` to the model changed the parameter estimate (slope) for `bty_avg`?
-    
+7.  What is the equation of the line corresponding to *just* male professors?
+
+8.  For two professors who received the same beauty rating, which gender tends to have the higher course evaluation score?
+
+9.  How does the relationship between beauty and evaluation score vary between male and female professors?
+
+10. What is the definition of adjusted $R^2$?
+    Explain how it is different than $R^2$ using values from this model.
+    Once again, use inline code in your answer.
+
+11. How do the adjusted $R^2$ values of `m_bty_gen` and `m_bty` compare?
+    What does this tell us about how useful `gender` is in explaining the variability in evaluation scores when we already have information on the beauty score of the professor.
+    Once again, use inline code in your answer.
+
+12. Compare the slopes of `bty_avg` under the two models (`m_bty` and `m_bty_gen`).
+    Has the addition of `gender` to the model changed the parameter estimate (slope) for `bty_avg`?
+
 # Wrapping up
 
-This is to finish up the workshop. Depending on the time you may need to do this
-after the workshop ended.
-    
-    
-13. Create a new model called `m_bty_gen_rank` predicting average professor evaluation 
-   `score` based on average beauty rating (`bty_avg`), `gender`, and `rank`.  
-    Write the linear model and interpret the slopes and intercept in context of the data. 
+This is to finish up the workshop.
+Depending on the time you may need to do this after the workshop ended.
+
+13. Create a new model called `m_bty_gen_rank` predicting average professor evaluation `score` based on average beauty rating (`bty_avg`), `gender`, and `rank`.\
+    Write the linear model and interpret the slopes and intercept in context of the data.
     Once again, use inline code in your answer.
-    
-14. How do the adjusted $R^2$ values of `m_bty_gen_rank` and `m_bty_gen` compare? 
-    What does this tell us about how useful `rank` is in explaining the variability 
-    in evaluation scores when we already have information on the beauty score and 
-    gender of the professor. And yet again, use inline code in your answer.
+
+14. How do the adjusted $R^2$ values of `m_bty_gen_rank` and `m_bty_gen` compare?
+    What does this tell us about how useful `rank` is in explaining the variability in evaluation scores when we already have information on the beauty score and gender of the professor.
+    And yet again, use inline code in your answer.
