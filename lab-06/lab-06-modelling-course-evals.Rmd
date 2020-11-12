@@ -14,11 +14,11 @@ library(tidyverse)
 library(tidymodels)
 library(openintro)
 
-score_bty <- linear_reg() %>%
+score_bty_fit <- linear_reg() %>%
   set_engine("lm") %>%
   fit(score ~ bty_avg, data = evals)
 
-score_gender <- linear_reg() %>%
+score_gender_fit <- linear_reg() %>%
   set_engine("lm") %>%
   fit(score ~ gender, data = evals)
 ```
@@ -90,7 +90,7 @@ To do so we need to calculate the predicted evaluation scores for each professor
 We use the `augment()` function for this:
 
 ```{r}
-score_bty_aug <- augment(score_bty$fit)
+score_bty_aug <- augment(score_bty_fit$fit)
 ```
 
 Let's take a look at what's in this augmented dataset:
@@ -121,21 +121,21 @@ You have two options for extracting the value of the intercept from the regressi
 Remember, the output looks like this:
 
 ```{r}
-tidy(score_gender)
+tidy(score_gender_fit)
 ```
 
 So the intercept is in the `estimate` column, and it's the first element in there.
 
 ```{r}
 # Option 1
-tidy(score_gender)$estimate[1]
+tidy(score_gender_fit)$estimate[1]
 ```
 
 We can also extract it using a dplyr pipeline:
 
 ```{r}
 # Option 2
-tidy(score_gender) %>% 
+tidy(score_gender_fit) %>% 
   filter(term == "(Intercept)") %>%   # filter for the intercept
   select(estimate) %>%                # select the estimate column
   pull()                              # pull value out of data frame
@@ -151,7 +151,7 @@ that is, where you label your code chunk, separated by a comma, i.e.
 ```
 
 ```{r}
-score_gender_intercept <- tidy(score_gender) %>% 
+score_gender_intercept <- tidy(score_gender_fit) %>% 
   filter(term == "(Intercept)") %>%
   select(estimate) %>%
   pull()
@@ -179,8 +179,8 @@ which will render to
 
 # Part 4: Multiple linear regression
 
-11. Next, we fit a multiple linear regression model, predicting average professor evaluation `score` based on average beauty rating (`bty_avg`) and `gender`. Name the model `score_bty_gender`. Interpret the intercept and the slopes of `bty_avg` and `gender`.
-12. What percent of the variability in `score` is explained by the model `m_bty_gen`. Once again, use inline code in your answer.
+11. Next, we fit a multiple linear regression model, predicting average professor evaluation `score` based on average beauty rating (`bty_avg`) and `gender`. Name the model `score_bty_gender_fit`. Interpret the intercept and the slopes of `bty_avg` and `gender`.
+12. What percent of the variability in `score` is explained by the model `score_bty_gender_fit`. Once again, use inline code in your answer.
 13. What is the equation of the line corresponding to *just* male professors?
 14. For two professors who received the same beauty rating, which gender tends to have the higher course evaluation score?
 15. How does the relationship between beauty and evaluation score vary between male and female professors?
@@ -189,6 +189,6 @@ which will render to
 Aim to make it to this point during the workshop.
 :::
 
-16. How do the adjusted $R^2$ values of `score_bty` and `score_bty_gender` compare? What does this tell us about how useful `gender` is in explaining the variability in evaluation scores when we already have information on the beauty score of the professor.
-17. Compare the slopes of `bty_avg` under the two models (`score_bty` and `score_bty_gender`). Has the addition of `gender` to the model changed the parameter estimate (slope) of `bty_avg`?
-18. Create a new model called `score_bty_gender_rank` predicting average professor evaluation `score` based on average beauty rating (`bty_avg`), `gender`, and `rank`. How do the adjusted $R^2$ values of `score_bty_gender` and `score_bty_gender_rank` compare? What does this tell us about how useful `rank` is in explaining the variability in evaluation scores when we already have information on the beauty score and gender of the professor.
+16. How do the adjusted $R^2$ values of `score_bty_fit` and `score_bty_gender_fit` compare? What does this tell us about how useful `gender` is in explaining the variability in evaluation scores when we already have information on the beauty score of the professor.
+17. Compare the slopes of `bty_avg` under the two models (`score_bty_fit` and `score_bty_gender_fit`). Has the addition of `gender` to the model changed the parameter estimate (slope) of `bty_avg`?
+18. Create a new model called `score_bty_gender_rank_fit` predicting average professor evaluation `score` based on average beauty rating (`bty_avg`), `gender`, and `rank`. How do the adjusted $R^2$ values of `score_bty_gender_life` and `score_bty_gender_rank_fit` compare? What does this tell us about how useful `rank` is in explaining the variability in evaluation scores when we already have information on the beauty score and gender of the professor.

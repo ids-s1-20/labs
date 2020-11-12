@@ -638,7 +638,7 @@ text-align: center;
 <li>Determine the <span class="math inline">\(R^2\)</span> of the model and interpret it in context of the data.</li>
 </ol>
 <p>Next, we’ll assess the model fit using a graphical diagnostic. To do so we need to calculate the predicted evaluation scores for each professor in the dataset as well as the residuals for each observation. We use the <code>augment()</code> function for this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>score_bty_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(score_bty<span class="sc">$</span>fit)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>score_bty_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(score_bty_fit<span class="sc">$</span>fit)</span></code></pre></div>
 <p>Let’s take a look at what’s in this augmented dataset:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(score_bty_aug)</span></code></pre></div>
 <pre><code>## [1] &quot;score&quot;      &quot;bty_avg&quot;    &quot;.fitted&quot;    &quot;.resid&quot;     &quot;.std.resid&quot;
@@ -657,7 +657,7 @@ text-align: center;
 <li>Fit a new linear model called <code>score_gender</code> to predict average professor evaluation <code>score</code> based on <code>gender</code> of the professor. and print out the regression output using <code>tidy()</code>. Based on the regression output, interpret the slope and intercept in context of the data. But we’ll do things a bit differently this time, using inline code for the values of the intercept and the slope! Below are some tips for extracting these values from the model output to use in your inline code.</li>
 </ol>
 <p>Let’s start with the intercept. You have two options for extracting the value of the intercept from the regression output. Remember, the output looks like this:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(score_gender)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(score_gender_fit)</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 5
 ##   term        estimate std.error statistic p.value
 ##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
@@ -665,18 +665,18 @@ text-align: center;
 ## 2 gendermale     0.142    0.0508      2.78 0.00558</code></pre>
 <p>So the intercept is in the <code>estimate</code> column, and it’s the first element in there.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(score_gender)<span class="sc">$</span>estimate[<span class="dv">1</span>]</span></code></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(score_gender_fit)<span class="sc">$</span>estimate[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 4.092821</code></pre>
 <p>We can also extract it using a dplyr pipeline:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(score_gender) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(score_gender_fit) <span class="sc">%&gt;%</span> </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">&quot;(Intercept)&quot;</span>) <span class="sc">%&gt;%</span>   <span class="co"># filter for the intercept</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(estimate) <span class="sc">%&gt;%</span>                <span class="co"># select the estimate column</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>()                              <span class="co"># pull value out of data frame</span></span></code></pre></div>
 <pre><code>## [1] 4.092821</code></pre>
 <p>Regardless of which option you use, you might consider storing the value in an object that you can easily refer to in your inline code, e.g.</p>
 <p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote"><span style="display: block;">You can hide the code for chunks like this where you are simply preparing objects for later use by adding <code>echo = FALSE</code> in the code chunk options, that is, where you label your code chunk, separated by a comma, i.e.<br /> <code>{r label, echo = FALSE}</code></span></span></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>score_gender_intercept <span class="ot">&lt;-</span> <span class="fu">tidy</span>(score_gender) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>score_gender_intercept <span class="ot">&lt;-</span> <span class="fu">tidy</span>(score_gender_fit) <span class="sc">%&gt;%</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">&quot;(Intercept)&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(estimate) <span class="sc">%&gt;%</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>()</span></code></pre></div>
@@ -693,8 +693,8 @@ text-align: center;
 <div id="part-4-multiple-linear-regression" class="section level1">
 <h1>Part 4: Multiple linear regression</h1>
 <ol start="11" style="list-style-type: decimal">
-<li>Next, we fit a multiple linear regression model, predicting average professor evaluation <code>score</code> based on average beauty rating (<code>bty_avg</code>) and <code>gender</code>. Name the model <code>score_bty_gender</code>. Interpret the intercept and the slopes of <code>bty_avg</code> and <code>gender</code>.</li>
-<li>What percent of the variability in <code>score</code> is explained by the model <code>m_bty_gen</code>. Once again, use inline code in your answer.</li>
+<li>Next, we fit a multiple linear regression model, predicting average professor evaluation <code>score</code> based on average beauty rating (<code>bty_avg</code>) and <code>gender</code>. Name the model <code>score_bty_gender_fit</code>. Interpret the intercept and the slopes of <code>bty_avg</code> and <code>gender</code>.</li>
+<li>What percent of the variability in <code>score</code> is explained by the model <code>score_bty_gender_fit</code>. Once again, use inline code in your answer.</li>
 <li>What is the equation of the line corresponding to <em>just</em> male professors?</li>
 <li>For two professors who received the same beauty rating, which gender tends to have the higher course evaluation score?</li>
 <li>How does the relationship between beauty and evaluation score vary between male and female professors?</li>
@@ -703,9 +703,9 @@ text-align: center;
 <p>Aim to make it to this point during the workshop.</p>
 </div>
 <ol start="16" style="list-style-type: decimal">
-<li>How do the adjusted <span class="math inline">\(R^2\)</span> values of <code>score_bty</code> and <code>score_bty_gender</code> compare? What does this tell us about how useful <code>gender</code> is in explaining the variability in evaluation scores when we already have information on the beauty score of the professor.</li>
-<li>Compare the slopes of <code>bty_avg</code> under the two models (<code>score_bty</code> and <code>score_bty_gender</code>). Has the addition of <code>gender</code> to the model changed the parameter estimate (slope) of <code>bty_avg</code>?</li>
-<li>Create a new model called <code>score_bty_gender_rank</code> predicting average professor evaluation <code>score</code> based on average beauty rating (<code>bty_avg</code>), <code>gender</code>, and <code>rank</code>. How do the adjusted <span class="math inline">\(R^2\)</span> values of <code>score_bty_gender</code> and <code>score_bty_gender_rank</code> compare? What does this tell us about how useful <code>rank</code> is in explaining the variability in evaluation scores when we already have information on the beauty score and gender of the professor.</li>
+<li>How do the adjusted <span class="math inline">\(R^2\)</span> values of <code>score_bty_fit</code> and <code>score_bty_gender_fit</code> compare? What does this tell us about how useful <code>gender</code> is in explaining the variability in evaluation scores when we already have information on the beauty score of the professor.</li>
+<li>Compare the slopes of <code>bty_avg</code> under the two models (<code>score_bty_fit</code> and <code>score_bty_gender_fit</code>). Has the addition of <code>gender</code> to the model changed the parameter estimate (slope) of <code>bty_avg</code>?</li>
+<li>Create a new model called <code>score_bty_gender_rank_fit</code> predicting average professor evaluation <code>score</code> based on average beauty rating (<code>bty_avg</code>), <code>gender</code>, and <code>rank</code>. How do the adjusted <span class="math inline">\(R^2\)</span> values of <code>score_bty_gender_life</code> and <code>score_bty_gender_rank_fit</code> compare? What does this tell us about how useful <code>rank</code> is in explaining the variability in evaluation scores when we already have information on the beauty score and gender of the professor.</li>
 </ol>
 </div>
 
