@@ -58,6 +58,7 @@ knitr::include_graphics("img/repo.png")
 
 Now that all the logistical details are done, start work on the planning of your project.
 
+-   Discuss how, if at all, you might incorporate modeling into your project. Note that this is not a requirement, but since we hadn't introduced modelling at the time of writing your proposal, this is a good time think about how, if at all, you might use modelling in your project.
 -   Discuss next steps for your project, identifying concrete tasks that need to be done. Assign at least one task to each member.
 
 ```{marginfigure}
