@@ -19,7 +19,8 @@ Your lab score will be based on having completed these steps and, as usual, indi
 Once you complete these, use the rest of the time to, well, work on your project!
 Remember, your project assignment is [here](https://www.introds.org/#project).
 
-If you haven't yet done so (I know some team members have not!) go to the course organization on GitHub and clone your project repo titled `project-TEAM_NAME`
+If you haven't yet done so (I know some team members have not!) go to the course organization on GitHub and clone your project repo titled `project-TEAM_NAME`.
+And if you have, pull before you proceed since I've made some updates to your repos.
 
 ## extra
 
