@@ -21,6 +21,16 @@ Remember, your project assignment is [here](https://www.introds.org/#project).
 
 If you haven't yet done so (I know some team members have not!) go to the course organization on GitHub and clone your project repo titled `project-TEAM_NAME`
 
+## extra
+
+A new folder called `extra` has been added to your repos.
+Any extra documents you might have go here.
+This might include Rmd files you're using to develop your project, any notes, or anything else.
+The contents of this folder will **not** be marked, it's just a convenient place to store documents and collaborate with teammates without cluttering the rest of your repo.
+
+-   If you have any extra documents in your repo, move them into this folder. To move files in RStudio: go to your Files pane and check the boxes next to the files you want to move, click on More, and then Move... and select the `extra` folder.
+-   Commit and push your changes. Once you do, your `Check allowed files` check should pass.
+
 ## README
 
 Add your project title and team name to the `README.Rmd` file in the repo.
