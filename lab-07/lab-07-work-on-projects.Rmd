@@ -77,7 +77,6 @@ When done, close the issue with the relevant commit. You can do this by prefacin
 ```
 
 -   Each member should then open an issue on the repo with their task, and assign it to themselves. Include as much detail as possible to make sure you remember your discussion.
--   Fill out this form (link to be posted) to help with presentation scheduling. **Only one response per team!**
 -   **Strongly recommended:** Get a hold of a tutor and run your ideas by them.
 
 ## Presentations
@@ -88,3 +87,4 @@ But some of you might choose to not do a live presentation if you have geographi
 If so, you might want to pre-record your presentation and submit the video.
 You can find instructions for pre-recording your presentations [here](https://docs.google.com/document/d/1FxpFqUbEVpOzp7PWICC8gEvmIKfsNPT3mmQuSufsGHQ/edit?usp=sharing).
 Discuss as a team which you prefer and submit your preference on the form [here](https://forms.office.com/Pages/ResponsePage.aspx?id=sAafLmkWiUWHiRCgaTTcYRiRHjHRDWhOuLE_6JyNA0dUOEtKMEE4NUc1TFRZOTZIVEVDWUZJSkVBQi4u).
+**Only one response per team!**
