@@ -28,17 +28,17 @@ format. This is where your presentation will go. Update the YAML with your
 project title, team name, etc. and commit and push your changes.
 - Go to your project repo on GitHub, click on **Settings** on the top right 
 corner, and scroll down to the section titled **GiHub Pages**. Under **Source**, 
-select `master branch`. This will give you a URL where the website for your 
+select `main` branch. This will give you a URL where the website for your 
 project will be automatically built from the content in your README. This might 
 take a few minutes. Click on the link to confirm that the website has been built.
-  - (Optional) Once the website it build, you can change its theme using the 
-  **Theme Chooser**.
+  - (Optional) Once the website it build, you can change its theme using to one of th
   - Also, once the website is built, you'll need to pull changes to your project
   in RStudio.
   - You can see how the template project repo looks [here](https://ids-s1-19.github.io/project/). Click on the link in the presentation 
   section and you should be able to view the rendered slides. This is the link
   we will use to project your slides during the presentations.
-  - On your repo you should see a text on top *No description, website, or topics provided.*. Next to it there's an **Edit** button. Add a short description as well 
+  - On your repo you should see a text on top *No description, website, or topics provided.*. 
+  Next to it there's an **Edit** button. Add a short description as well 
   as the URL of your project website here.
   - **Note:** This website is public, but your repository will remain private,
   unless... you as a team decide you would like to feature your repos in your 
@@ -54,9 +54,9 @@ that folder.
 - Add the content from your proposal to the `proposal.Rmd` file in the `proposal`
 folder. Knit the document to make sure everything works and commit and push
 your proposal to your project repo.
-  - **Important:** Your data now lives in a folder called `data` that is *not* 
+  - **Important:** Your data lives in a folder called `data` that is *not* 
   inside your proposal folder. So you need to specify the path to your 
-  data with `"../data/name_of_datafile"` in your `read_csv()` (or similar) 
+  data with `here::here("data/name_of_datafile")` in your `read_csv()` (or similar) 
   function.
   - You don't need to make further updates to your proposal at this point, 
   even if your plans for the project change slightly.
@@ -64,12 +64,12 @@ your proposal to your project repo.
 works. Commit and push your updated proposal to your project repo.
   - **Important:** Same note as above! Your data now lives in a folder called 
   `data` that is *not* inside your presentation folder. So you need to specify 
-  the path to your data with `"../data/name_of_datafile"` in your `read_csv()` 
+  the path to your data with `here::here("data/name_of_datafile")` in your `read_csv()` 
   (or similar) function.
 - Now that all the logistical details are done, start working on your project.
   - Open issues for things you want to accomplish. Assign them to specific team 
   member(s) if you like. And as you complete the tasks, close the issues. You 
   can also use the issues for discussion on the specific tasks.
 - Fill out [this form](https://forms.office.com/Pages/ResponsePage.aspx?id=sAafLmkWiUWHiRCgaTTcYRiRHjHRDWhOuLE_6JyNA0dUMVlOQ0ZOM0pGSU9QM09YUlhHNEtTT0hHRy4u) to help with presentation 
-scheduling. Only one response per team.
+scheduling. **Only one response per team.**
 - **Strongly recommended:** Get a hold of a tutor and run your ideas by them.

@@ -1,0 +1,48 @@
+---
+title: "Make progress on projects"
+output: 
+  tufte::tufte_html:
+    css: ../lab.css
+    tufte_variant: "envisioned"
+    highlight: pygments
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This week you'll be working on your projects.
+This means no separate `lab-08` repo for your lab, everything goes in your project repo.
+And we won't be scoring this lab, so no deadline next Tuesday either. 
+At this point your focus should be on finishing up your projects!
+
+# Logistics
+
+1. **Confirm presentation format:** Go [here](https://github.com/ids-s1-20/teams/blob/main/ids20-presentations.csv) and confirm your presentation format. If anything is wrong, let your tutor know ASAP!
+
+2. **Review video sharing instructions:** If you are planning to [pre-record your presentation](https://docs.google.com/document/d/1FxpFqUbEVpOzp7PWICC8gEvmIKfsNPT3mmQuSufsGHQ/edit?usp=sharing), you will need to upload your presentation *somewhere* and then add a link to the video in your repo README. We recommend you upload your video to MediaHopper. To do so, go to [media.ed.ac.uk](https://media.ed.ac.uk/), log in from the top left corner, then click on Add New Media and upload your video as unlisted. Once uploaded, grab the sharing link and add it to your repo README, next to the link to your slides. The video below goes through this process. Ask questions **early** if anything is unclear. Your video must be updated and link must be added to your repo by 10am UK time on 4 December!
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rqxhOgrifyk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+3. **Review evaluation criteria:** When evaluating your project, we will consider the following questions:
+
+- Content: Is the research question well designed and is the data being used relevant to the research question?
+- Content: Did the team use appropriate statistical procedures and interpretations of results accurately?
+- Creativity and Critical Thought: Is the project carefully thought out? Are the limitations carefully considered?
+- Does it appear that time and effort went into the planning and implementation of the project?
+- Slides: Are the slides well organized, readable, not full of text, featuring figures with legible labels, legends, etc.?
+- Professionalism: How well did the team present? Does the presentation appear to be well practised? Did everyone get a chance to say something meaningful about the project?
+- Teamwork: Did the team present a unified story, or did it seem like independent pieces of work patched together?
+- Time management: Did the team divide the time well amongst themselves or got cut off going over time?
+- Executive summary: Does it follow guidance? Is it concise but detailed enough?
+
+# Project progress
+
+Now back to your project...
+
+4. **Craft your to-do list:** Discuss your plan for your project as a team, review existing issues and open new ones as needed. Not every issue needs to have a checklist, but you might want to include checklists in some of them to remind yourselves the exact steps you discussed to tackle the issue. Then assign **at least one** issue to each team member. 
+
+5. **Cite your data:** Now is the time to fix up those citations! In your project README there is a link to a resource for properly citing data. Develop a citation for your dataset and add it under the data section using this guidance. If you have questions, ask a tutor for help!
+
+6. **Strongly recommended:** Get a hold of a tutor and run your ideas by them. Give them a 30 second version of your 5 minute presentation and ask for their feedback.
