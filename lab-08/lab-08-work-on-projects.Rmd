@@ -23,7 +23,9 @@ At this point your focus should be on finishing up your projects!
 
 2. **Review video sharing instructions:** If you are planning to [pre-record your presentation](https://docs.google.com/document/d/1FxpFqUbEVpOzp7PWICC8gEvmIKfsNPT3mmQuSufsGHQ/edit?usp=sharing), you will need to upload your presentation *somewhere* and then add a link to the video in your repo README. We recommend you upload your video to MediaHopper. To do so, go to [media.ed.ac.uk](https://media.ed.ac.uk/), log in from the top left corner, then click on Add New Media and upload your video as unlisted. Once uploaded, grab the sharing link and add it to your repo README, next to the link to your slides. The video below goes through this process. Ask questions **early** if anything is unclear. Your video must be updated and link must be added to your repo by 10am UK time on 4 December!
 
+```{marginfigure}
 ![](https://youtu.be/rqxhOgrifyk){width="560" height="315"}
+```
 
 3. **Review evaluation criteria:** When evaluating your project, we will consider the following questions:
 
