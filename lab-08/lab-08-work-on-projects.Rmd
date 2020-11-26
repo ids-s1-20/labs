@@ -40,12 +40,14 @@ embed_url("https://www.youtube.com/watch?v=rqxhOgrifyk")
 - Time management: Did the team divide the time well amongst themselves or got cut off going over time?
 - Executive summary: Does it follow guidance? Is it concise but detailed enough?
 
+4. **Discuss making your project repo public:** If everyone on the team agrees, after the semester ends, I can clean your repo of any issues including marks and then make it public and transfer ownership to you (once grades for the course have been officially posted). This is a souvenir from IDS to you and something you can add to your data science portfolio! This is entirely optional and your score on the project will in no way be impacted by your decision. Let me know your decision sometime before the course ends!
+
 # Project progress
 
 Now back to your project...
 
-4. **Craft your to-do list:** Discuss your plan for your project as a team, review existing issues and open new ones as needed. Not every issue needs to have a checklist, but you might want to include checklists in some of them to remind yourselves the exact steps you discussed to tackle the issue. Then assign **at least one** issue to each team member. 
+5. **Craft your to-do list:** Discuss your plan for your project as a team, review existing issues and open new ones as needed. Not every issue needs to have a checklist, but you might want to include checklists in some of them to remind yourselves the exact steps you discussed to tackle the issue. Then assign **at least one** issue to each team member. 
 
-5. **Cite your data:** Now is the time to fix up those citations! In your project README there is a link to a resource for properly citing data. Develop a citation for your dataset and add it under the data section using this guidance. If you have questions, ask a tutor for help!
+6. **Cite your data:** Now is the time to fix up those citations! In your project README there is a link to a resource for properly citing data. Develop a citation for your dataset and add it under the data section using this guidance. If you have questions, ask a tutor for help!
 
-6. **Strongly recommended:** Get a hold of a tutor and run your ideas by them. Give them a 30 second version of your 5 minute presentation and ask for their feedback.
+7. **Strongly recommended:** Get a hold of a tutor and run your ideas by them. Give them a 30 second version of your 5 minute presentation and ask for their feedback.
